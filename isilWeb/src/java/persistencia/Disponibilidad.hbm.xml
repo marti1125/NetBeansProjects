@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/04/2010 08:17:45 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="persistencia.Disponibilidad" table="disponibilidad" catalog="gestion">
+        <composite-id name="id" class="persistencia.DisponibilidadId">
+            <key-property name="docente" type="string">
+                <column name="docente" length="10" />
+            </key-property>
+            <key-property name="curso" type="string">
+                <column name="curso" length="10" />
+            </key-property>
+        </composite-id>
+        <property name="horario" type="string">
+            <column name="horario" length="145" />
+        </property>
+    </class>
+</hibernate-mapping>

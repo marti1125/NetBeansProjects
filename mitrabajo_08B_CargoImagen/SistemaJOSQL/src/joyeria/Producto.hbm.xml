@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 10-may-2010 15:42:27 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="joyeria.Producto" table="Producto" schema="dbo" catalog="Joyeria">
+        <id name="idProducto" type="int">
+            <column name="IdProducto" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="familia" class="joyeria.Familia" fetch="select">
+            <column name="IdFamilia" not-null="true" />
+        </many-to-one>
+        <property name="descripcion" type="string">
+            <column name="Descripcion" length="50" not-null="true" />
+        </property>
+        <property name="fechaDeRegistro" type="timestamp">
+            <column name="FechaDeRegistro" length="23" not-null="true" />
+        </property>
+        <property name="fechaDeBaja" type="timestamp">
+            <column name="FechaDeBaja" length="23" not-null="true" />
+        </property>
+        <property name="estado" type="string">
+            <column name="Estado" length="50" not-null="true" />
+        </property>
+        <property name="foto" type="binary">
+            <column name="Foto" not-null="true" />
+        </property>
+        <set name="detalleIngresos" inverse="true">
+            <key>
+                <column name="IdProducto" not-null="true" />
+            </key>
+            <one-to-many class="joyeria.DetalleIngreso" />
+        </set>
+    </class>
+</hibernate-mapping>

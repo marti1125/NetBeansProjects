@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24/11/2010 08:39:35 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="jstore.Usuario" table="Usuario" catalog="jstore">
+        <id name="codigoUsuario" type="java.lang.Integer">
+            <column name="codigoUsuario" />
+            <generator class="identity" />
+        </id>
+        <property name="usuario" type="string">
+            <column name="usuario" />
+        </property>
+        <property name="clave" type="string">
+            <column name="clave" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="nombre" />
+        </property>
+        <property name="apellido" type="string">
+            <column name="apellido" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" />
+        </property>
+        <set name="tiendas" inverse="true">
+            <key>
+                <column name="codUsuario" />
+            </key>
+            <one-to-many class="jstore.Tienda" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24/11/2010 08:39:35 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="jstore.Tienda" table="Tienda" catalog="jstore">
+        <id name="codigoTienda" type="java.lang.Integer">
+            <column name="codigoTienda" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="usuario" class="jstore.Usuario" fetch="select">
+            <column name="codUsuario" />
+        </many-to-one>
+        <property name="duenio" type="string">
+            <column name="duenio" />
+        </property>
+        <property name="ubicacion" type="string">
+            <column name="ubicacion" />
+        </property>
+        <set name="productoDetalles" inverse="true">
+            <key>
+                <column name="codTienda" />
+            </key>
+            <one-to-many class="jstore.ProductoDetalle" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/04/2010 08:17:45 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="persistencia.Curso" table="curso" catalog="gestion">
+        <id name="codCurso" type="string">
+            <column name="COD_CURSO" length="10" />
+            <generator class="assigned" />
+        </id>
+        <property name="nomCurso" type="string">
+            <column name="NOM_CURSO" length="40" />
+        </property>
+        <property name="credCurso" type="java.lang.Integer">
+            <column name="CRED_CURSO" />
+        </property>
+        <property name="hrsTeoria" type="java.lang.Integer">
+            <column name="HRS_TEORIA" />
+        </property>
+        <property name="hrsPract" type="java.lang.Integer">
+            <column name="HRS_PRACT" />
+        </property>
+        <property name="hrsLab" type="java.lang.Integer">
+            <column name="HRS_LAB" />
+        </property>
+        <property name="ciclo" type="java.lang.Integer">
+            <column name="CICLO" />
+        </property>
+        <property name="tipoCurso" type="string">
+            <column name="TIPO_CURSO" length="7" />
+        </property>
+    </class>
+</hibernate-mapping>

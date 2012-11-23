@@ -1,0 +1,104 @@
+@charset "utf-8";
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 28px;
+	color: #0080FF;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #0069D2;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	color: #408080;
+}
+
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000080;
+}
+
+.mensajeError {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FF0000;
+}
+
+.menu01 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #0080FF;
+	background-color: #C4E1FF;
+	text-align: center;
+}
+
+a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #0080FF;
+}
+
+a:hover {
+	color: #FFFFFF;
+	background-color: #0080FF;
+}
+
+.tablaTitulo {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFFFFF;
+	background-color: #0080FF;
+	text-align: center;
+}
+
+.TablaDato {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #0080FF;
+	background-color: #f0f0f0;
+}
+
+.campoEdicion {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #006F6F;
+	background-color: #f0f0f0;
+	border-top-color: #008080;
+	border-right-color: #008080;
+	border-bottom-color: #008080;
+	border-left-color: #008080;
+	margin: 1px;
+}
+.boton {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 11px;
+	color: #FFFFFF;
+	background-color: #0080FF;
+	border: 1px solid #004080;
+}
+
+.etiqueta {
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #000000;
+    width:80px;
+    float:left;
+    text-align: right;
+    margin-right: 2px;
+}
+
+.divCampo {
+    clear:both;
+    margin:2px;
+}
+
+.divBotones {
+    clear:both;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    margin-left: 5px;
+}

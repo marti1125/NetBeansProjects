@@ -1,0 +1,248 @@
+<html>
+    <head>
+        <meta name="j1holtabname" content="Exercise 4: Make it connected">
+    </head>
+    <body>
+        <div class="j1holcontents">
+            
+            <h2><a name="Exercise_4"></a>Exercise 4: Make it connected</h2>
+            
+            <div class="j1holduration xbig">Expected duration: 20 minutes</div>
+            
+            <p class="j1holheader">Introduction:</p>
+            We created the mobile game. In this exercise we will enhance it to share the high scores with other users.
+            It common feature of games in todays mobile market. Players like to compete and it's 
+            better to compare your results with real players. <br><br>
+            We will use Java ME Web Service API (JSR 172) to connect to the web service that collects the high scores. 
+            The same web service also provides the latest results to be displayed in the High Score table.<br><br>            
+            The NetBeans Mobility includes a wizard for generating  
+            the JSR172 stubs for the mobile client that will connect to a web service.<br><br>
+            In this step you will not enhance the game functionality itself but you will make 
+            the application connected to a server part.
+            
+            <p class="j1holheader">Steps to follow:</p>
+            
+            <ul class="j1hollist">
+                <li>Create new configuration</li>
+                <li>Generate stubs</li>
+            </ul>
+            
+            <p class="j1holsubheader">Step 1: Create new configuration</p>
+            <p> In this step you will create new configuration in your project.
+                It will allow us to have two version of the same project. First one will be used for the online game 
+                and the second one for offline game.
+            </p>
+            <ol>
+                <li>
+                    Right click the <b>MobileGameApp</b> project. It will open the project Properties. 
+                </li>
+                <li>
+                    In the project properties dialog, select <b>Add Configuration...</b> from <b>Project configurations</b> the combo box. 
+                    It will open Add Configuration dialog.
+                </li>
+                <li>
+                    Type in the name for new configuration - <b>OnlineGame</b>. Finish the dialog.
+                    <br>            
+                    <img src="index_files/screenshots/ex4-create-configuration.png" alt="Screenshot of new configuration dialog" /><br>
+                    <br>
+                    Figure-4-1: New configuration dialog<br><br>
+                </li>
+                <li>
+                    In project properties, select <b>Abilities</b>. Uncheck the <b>Use Values from DefaultConfiguration</b>.
+                </li>
+                <li>
+                    Click <b>Add</b> button. In <i>Add Ability</i> dialog provide name <b>ONLINE</b> and value <b>true</b>. Click OK to finish dialog.
+                    <br>            
+                    <img src="index_files/screenshots/ex4-add-ability.png" alt="Screenshot of new configuration dialog" />
+                    <br>
+                    Figure-4-2: New ability dialog<br><br>
+                </li>
+                <li>
+                    Click OK to close the project properties dialog.
+                </li>
+                
+            </ol>
+            <p class="j1holsubheader">Step 2: Generate stubs</p>
+            <p> In this step you will generate a mobile client to the web service. 
+            We will use the wizard provided by NetBeans Mobility.</p>
+            <ol>                
+                <li> Select <b>File > New File...</b> from main menu. 
+                    In the <b>New File</b> dialog select <b>MIDP</b> category and <b>Java ME Web Service Client</b>. 
+                    Make sure that <i>MobileGameApp</i> project is selected in <b>Project</b> combo box. Click <b>Next</b> button. <br>
+                </li>
+                
+                <li> You have to specify an URL of webservice's WSDL file in this panel. The WSDL can be either a file stored locally on your hard drive or 
+                an URL of a webservice at the internet. <br>            
+                <a name="WEBSERVICE_URL"></a>Our webservice should be running at following URL : <b>http://193.86.76.42:8080/DukeHighScores/HighScoresService?WSDL</b>
+                <br><br>
+                <i>If you are not able to access the web service WSDL try to check your network settings. 
+                    Sometimes a firewall or antivirus shield can protect you from connecting to the web service. 
+                    If the webservice URL is unreachable you can deploy the webservice to application server by yourself. 
+                    The project with the webservice is at &lt;lab_root&gt;solutions/solution4 directory. 
+                    The name of the project is DukeHighScores.
+                </i><br><br>
+                <li>
+                Select the <b>Running Web Service</b> radio button.</li>
+                <li>Type the URL of the webservice to <b>WSDL URL</b> text field. 
+                    Click <b>Retrieve WSDL</b> button and, if the WSDL file name automatically
+                    appears in the Local Filename field, the WSDL file is successfully downloaded and validated. 
+                    <br><br>
+                    The validation of the WSDL is mandatory step. 
+                    You cannot generate the Java ME Web Service Client to any webservice. There are some restrictions for the webservice defined by the JSR 172. 
+                    The webservice has to be WS-I Basic Profile compliant. There is no support for asynchronous messaging. No support for SOAP messages with attachments. 
+                    Support only for the literal representation of messages. No support for extensible type mapping. The wizard will report an error message when you cannot 
+                    generate the J2ME webservice client for a webservice.
+                    <br><br>
+                </li>
+                <li>            
+                    The wizard will provide you a default name for the client and package. Change the <b>Package</b> name to <b><i>org.netbeans.j1.game.client</i></b>
+                    <br>            
+                    <img src="index_files/screenshots/ex4-javame-webservice-client.png" alt="Screenshot of Java ME Webservice Client Wizard" />
+                    <br>
+                    Figure-4-3: Java ME Web Service Client wizard<br><br>
+                </li>
+                <li>
+                    When you press <b>Finish</b> button the wizard will generate web service client stubs.<br><br>
+                    <img src="index_files/screenshots/ex4-generated-stubs.png" alt="Screenshot of generated stubs" />
+                    <br>
+                    Figure-4-4: Generated stubs
+                </li>
+            </ol>
+            
+            
+            <p class="j1holsubheader">Step 3: Use mobile client</p>
+            <p>You generated the stubs that will allow you communicate with the web service on a server.
+            It is time to use the web service client in the game source code.</p>
+            <ol>  
+                <li>
+                    Add following code to the <b>GameMIDlet.java</b> source code. You can add it to the end of the file.
+                    <div class="codebox">
+                        <b><pre>
+    //TODO: [Exercise 4][step 3] add the getMobileClient() method                            
+<b>    HighScoresService client = null;
+    public HighScoresService getMobileClient() {
+        if(client == null) {
+            client = new HighScoresService_Stub();
+        }
+        return client;
+    }</b>
+                        </pre></b>
+                    </div> 
+                    This will add new method for retrieving the webservice stub. 
+                </li>
+                <li>
+                    Fix the imports.
+                </li>
+                <li>
+                    Update the <b>getAddHighScoreTask</b> method to upload the scores to the server. 
+                    <div class="codebox">
+                        <b><pre>
+    public SimpleCancellableTask getAddHighScoreTask() {
+        if (addHighScoreTask == null) {
+            // write pre-init user code here
+            addHighScoreTask = new SimpleCancellableTask();
+            addHighScoreTask.setExecutable(new org.netbeans.microedition.util.Executable() {
+                public void execute() throws Exception {
+//#if ONLINE == "true"
+                    //TODO: [Exercise 4][step 3] set High score
+                    //upload the score to WS
+<b>               getMobileClient().setHighScore(getNameTextField().getString(), lastHighScore);</b>
+                    //get the high scores from WS again to synchronize with server side
+<b>               updateHighScoresTable(getMobileClient().getHighScores());r</b>
+//#else
+//#                     //just add the score to the scores table
+//#                     addScoreToScoreTable(lastHighScore, getNameTextField().getString());
+//#endif
+                    //anyway update the High scores table
+                    updateSvgWithHighScores();
+                }
+            });
+        // write post-init user code here
+        }
+        return addHighScoreTask;
+    }
+                        </pre></b>
+                    </div> 
+                </li>
+                <li>
+                    Update the <b>getHighScoresTask</b> method to download the scores from the server. 
+                    <div class="codebox">
+                        <b><pre>
+    public SimpleCancellableTask getHighScoresTask() {
+        if (highScoresTask == null) {
+            // write pre-init user code here
+            highScoresTask = new SimpleCancellableTask();
+            highScoresTask.setExecutable(new org.netbeans.microedition.util.Executable() {
+                public void execute() throws Exception {
+                    // write task-execution user code here
+//#if (ONLINE == "true")
+                    //TODO: [Exercise 4][step 3] get High Scores                    
+                    //connect to WS and get the latest scores
+<b>               updateHighScoresTable(getMobileClient().getHighScores());//download the high scores</b>
+                    //update the high score table
+<b>               updateSvgWithHighScores();//update the svg image with the latest high scores</b>
+//#else 
+//#                    //this code is used when the ONLINE ability value isn't true
+//#                    //nothing to do. The high scores are in the highScoresValues array already
+//#                    Thread.sleep(500);
+//#endif
+
+                }
+            });
+        // write post-init user code here
+        }
+        return highScoresTask;
+    }
+                        </pre></b>
+                    </div> 
+                </li>
+                
+            </ol>
+            
+            <p class="j1holsubheader">Step 4: Run the game</p>
+            <p>We finished the creation of the game. Even if there is just one source code we created
+                two versions of the game. One is the OnlineGame that connects to server. 
+                The other one is the origin source code that works offline.<br>
+                <br>
+                The online version enables you to share the high scores with other players.
+            </p>
+            <ol>  
+                <li>Switch active configuration to <b>DefaultConfiguration</b> 
+                in configuration combobox in middle of toolbar.
+                <br><br>            
+                    <img src="index_files/screenshots/ex4-switch-configuration.png" alt="Switch configuration" />
+                    <br>
+                    Figure-4-5: Switch configuration<br><br>                
+                </li>
+                <li>
+                    Run the project. It will run the offline version of the game.
+                <br><br>
+                </li>
+                <li>Switch active configuration to <b>OnlineGame</b> 
+                in configuration combobox in middle of toolbar.
+                <br><br>            
+                    <img src="index_files/screenshots/ex4-switch-configuration.png" alt="Switch configuration" />
+                    <br>
+                    Figure-4-6: Switch configuration<br><br>                
+                </li>
+                <li>
+                    Run the project. It will run the online version of the game.
+                </li>
+                    
+            </ol>
+            
+            <p class="j1holheader">Summary:</p>
+            
+            <p>
+                You connected the game with the server side. It is very easy to use the generated stubs.  
+                The application is now able to upload your result to server and display the list of best results on your device. 
+                <br><br>
+                We used J2ME Webservices API to achieve this functionality but the J2ME Webservices API is not supported on lot of device in real world. 
+                It is easy to change the client calls to solution not using J2ME Webservice API. You can use the second wizard that NetBeans Mobility provides - "Mobile Client to Web Application".
+                The difference between these two solutions is described in "LAB-6340: &lt;Advanced Java ME Programming - Streaming Video From Server to Your Device&gt;" Hands-on lab
+            </p>
+            
+            <p><a href="#Summary">Go on to summary</a></p>
+        </div>
+    </body>
+</html>

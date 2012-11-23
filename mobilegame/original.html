@@ -1,0 +1,943 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Hands-on Lab Template</title>
+  <meta http-equiv="content-type"
+ content="text/html; charset=iso-8859-1">
+  <meta name="keywords" value="">
+  <meta name="description" value="">
+  <link rel="stylesheet" href="./index_files/default.css">
+<!--stopindex-->
+  <style type="text/css">
+<!--
+.style1 {
+	color: #FF0000;
+	font-style: italic;
+	font-weight: bold;
+}
+.style8 {font-size: 12pt}
+.style10 {color: #594fbf}
+-->
+  </style>
+
+  <meta name="author" content="Sang Shin">
+</head>
+<body leftmargin="0" topmargin="0" bgcolor="#ffffff" marginheight="0"
+ marginwidth="0">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>&nbsp;&nbsp;
+</code>
+<div class="pagetitle">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tbody>
+    <tr>
+      <td width="49%"><span class="sp2">&nbsp;</span></td>
+    </tr>
+    <form action="http://www.sun.com/search/index.cgi"></form>
+
+    <tr>
+      <td nowrap="nowrap" valign="middle" width="49%">
+      <div class="sitelinks"> <a href="http://www.sun.com/">sun.com</a></div>
+      </td>
+      <td colspan="3" nowrap="nowrap" valign="middle" width="49%">
+      <div class="sitelinks">
+      <div align="right">&nbsp;&nbsp;&nbsp;<a href="http://my.sun.com/">My
+Sun</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.sun.com/worldwide/">Worldwide
+Sites</a></div>
+
+      </div>
+      </td>
+    </tr>
+    <tr>
+      <td width="49%"><span class="sp2">&nbsp;</span></td>
+    </tr>
+  </tbody>
+</table>
+<!-- END GLOBAL NAVIGATION TOOLBAR --><!-- BEGIN GENERIC MASTHEAD -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+  <tbody>
+    <tr>
+      <td class="sunblue" valign="top"><a href="http://www.sun.com/"><img
+ src="./index_files/logo_sun.gif" alt="Sun Microsystems Logo" border="0"
+ height="43" width="110"></a><br>
+      <img src="a.gif" alt="" height="1" width="170"></td>
+      <td><img src="./index_files/a.gif" alt="" border="0" height="1"
+ width="10"></td>
+      <td class="sunyellow" nowrap="nowrap" valign="bottom" width="50%"><br>
+      <span class="sp5">&nbsp;</span></td>
+      <td><img src="./index_files/a.gif" alt="" border="0" height="1"
+ width="10"></td>
+      <td class="sunred" nowrap="nowrap" valign="bottom" width="50%"><br>
+
+      <span class="sp5">&nbsp;</span></td>
+      <td><img src="./index_files/a.gif" alt="" border="0" height="8"
+ width="10"></td>
+    </tr>
+  </tbody>
+</table>
+LAB-xxxx: Title of Your Hands-on Lab<br>
+</div>
+<div style="margin-left: 40px;"> </div>
+<p class="main1" style="margin-left: 40px; text-align: center;"><span
+ style="font-weight: bold;">Expected duration: 120 minutes<br>
+<br>
+
+</span></p>
+<p class="main1" style="margin-left: 40px;">[Write your abstract here.
+An example follows.] JavaServer Faces (JSF) is a standard-based server
+side user
+interface component framework for Java technology based Web
+applications.&nbsp;
+In this hands-on lab, your will learn basic concept, architecture
+and features of JavaServer Faces by building, deploying, and
+running
+a set of sample Web applications. You will also learn the usage of
+basic UI components through JavaServer Faces custom
+tags, specify page selection through JavaServer Faces navigation
+model, perform input validation, handle
+event handling, and so on. <br>
+</p>
+<p class="main1" style="margin-left: 40px;"><span
+ style="font-weight: bold;"><br>
+</span></p>
+<div style="text-align: center;"><span style="font-weight: bold;"><span
+ style="color: rgb(0, 0, 0);"><a name="Copyright"></a>Copyright</span></span><br>
+</div>
+<pre
+ style="margin-left: 40px; font-family: helvetica,arial,sans-serif; color: rgb(0, 0, 0);"
+ wrap="">Copyright  2007 Sun Microsystems, Inc. All rights reserved. Sun, Sun Microsystems, the Sun logo, Solaris, Java, the Java Coffee Cup logo, JavaOne, the JavaOne logo, and all Solaris-based and Java-based marks and logos are trademarks or registered trademarks of Sun Microsystems, Inc. in the United States and other countries.</pre>
+<p class="main1"
+ style="margin-left: 40px; font-family: helvetica,arial,sans-serif; color: rgb(0, 0, 0); font-weight: bold;">Prerequisites<br>
+</p>
+<p class="main1"
+ style="margin-left: 40px; font-family: helvetica,arial,sans-serif; color: rgb(0, 0, 0); font-weight: bold;"><span
+ style="font-weight: normal;">This hands-on lab assumes you have some
+basic knowledge or programming experience on the following&nbsp;
+
+technologies.<br>
+</span></p>
+<ul style="margin-left: 40px;">
+  <li style="color: rgb(0, 0, 0);">Servlet and JSP Programming</li>
+  <li><span style="color: rgb(0, 0, 0);">MVC (Model, View, and
+Controller) architecture</span></li>
+</ul>
+<p class="main1" style="margin-left: 40px;"></p>
+<p style="margin-left: 40px; font-weight: bold;">System requirement</p>
+<ul style="margin-left: 40px;">
+  <li>Supported OS: Windows 2000/ XP, Solaris 8/9, Linux<br>
+
+  </li>
+  <li>Memory requirement: 256M minimum, 512M recommended<br>
+  </li>
+  <li>Disk space requirement: 300M bytes<br>
+  </li>
+</ul>
+<p class="main1" style="margin-left: 40px;"><span
+ style="font-weight: bold;">Software needed for the
+lab<span style="color: rgb(255, 0, 0);"></span><br>
+</span></p>
+<p class="main1" style="margin-left: 40px;">[List the&nbsp; list of
+platform software that need to
+be downloaded. The following is an example.]</p>
+
+<p class="main1" style="margin-left: 40px;"><span
+ style="color: rgb(255, 0, 0);"><span style="color: rgb(0, 0, 0);">Please
+download and install the following set of software. If you have any
+questions on installation, please feel free to send questions to the
+email alias mentioned below.</span></span><br>
+<span style="color: rgb(255, 0, 0);"></span></p>
+<ol>
+  <ol>
+  </ol>
+</ol>
+<div style="margin-left: 40px;">
+<ul>
+</ul>
+<ul>
+  <li><font size="-1"> Download and install<span
+ style="font-weight: bold;"> </span></font><a
+ style="font-family: helvetica,arial,sans-serif;"
+ href="http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&amp;PartDetailId=j2eesdk-1_4_2005Q1-fcs-oth-JPR&amp;SiteId=JSC&amp;TransactionId=noreg"><font
+ size="-1">J2EE 1.4 SDK
+2005Q1</font></a> </li>
+
+  <ul>
+    <li><font size="-1">This is </font><font size="-1">"Feb. 4th,
+2005" version.&nbsp; (The insruction in this document will not work
+with </font><font size="-1">"June
+15, 2004 (Update1)" version. of J2EE 1.4 SDK.)</font></li>
+    <ul>
+      <li><font size="-1">If your system has "June 15, 2004" version
+of J2EE 1.4 SDK already installed, you can either uninstall it first
+then reinstall the "Feb.
+4th" version or install the "Feb. 4th" version in a new directory.<br>
+        </font></li>
+    </ul>
+
+    <li><font size="-1">This is "All-In-One Bundle".&nbsp; (You
+can install this even if you have installed J2SE previously)</font></li>
+    <li><font size="-1">Installation should add
+&lt;J2EE14_HOME&gt;/bin in your
+"path" environment
+variable.&nbsp; Type "asadmin help" to see if it is added correctly.<br>
+      </font></li>
+    <ul>
+      <li><font size="-1">Windows: &lt;J2EE14_HOME&gt; is set
+c:\Sun\AppServer as
+a default</font></li>
+
+      <li><font size="-1">Solaris/Linux: </font><font size="-1">&lt;J2EE14_HOME&gt;
+is set /opt/SUNWappserverr as a default<br>
+        </font></li>
+    </ul>
+    <li><font size="-1">The installation and configuration of
+J2EE 1.4 SDK is
+simple enough so you would not
+need to read a document for downloading, installing, and starting it.
+&nbsp;But if you need more information, you can read <a
+ href="http://java.sun.com/j2ee/1.4/docs/relnotes/install.html">J2EE
+1.4 Installation note</a></font></li>
+  </ul>
+
+</ul>
+</div>
+<ul>
+  <ul>
+    <li>Download and install <a
+ href="http://www.netbeans.info/downloads/download.php?a=b&amp;p=1">NetBeans
+IDE 4.1</a></li>
+    <ul>
+      <li>All the exercises in this lab can be done using an editor of
+your choice and ant script at the command line.&nbsp; However, if you
+want to build and deploy them using NetBeans IDE, you are welcome to do
+so as well.&nbsp; <br>
+
+      </li>
+      <li>The instruction of how to build and deploy the lab exercises
+in this lab is provided as an optional exercise.<br>
+      </li>
+    </ul>
+  </ul>
+</ul>
+<ul>
+  <ul>
+    <li>Download and unzip <a
+ href="http://www.javapassion.com/handsonlabs/4205_basicstruts.zip">lab
+zip file (4205_basicstruts.zip)</a> under a directory of your
+choice,&nbsp; &lt;lab_root&gt; <br>
+
+    </li>
+    <ul>
+      <li>Read &lt;lab_root&gt;/basicstruts/index.html to proceed</li>
+    </ul>
+  </ul>
+</ul>
+<div style="margin-left: 40px;"><span style="font-weight: bold;">Notations
+used in this documentation</span><br>
+<ul>
+
+  <li>&lt;J2EE14_HOME&gt; or &lt;INSTALL_DIR&gt; </li>
+  <ul>
+    <li>It is the installation directory of J2EE 1.4 SDK</li>
+    <ul>
+      <li>For Windows, the default is C:\Sun\AppServer</li>
+
+      <li>For Solaris/Linux, the default is /opt/SUNWappserver</li>
+    </ul>
+  </ul>
+</ul>
+<ul>
+  <li>&lt;lab_root&gt; - directory into which lab zip file is
+unzipped</li>
+</ul>
+<ol>
+  <ul>
+
+    <li>This document uses &lt;lab_root&gt; to denote the directory
+under which you have
+unzipped the lab zip file of this handson lab. The name of the lab zip
+file of this handson lab is <span style="font-weight: bold;">7622_netbeans40.zip</span>.</li>
+    <li>Once you
+unzipped the lab zip file under &lt;lab_root&gt;, it will create
+a subdirectory called <span style="font-weight: bold;">netbeans40</span>.
+For example, under Windows, if you
+have unzipped the lab zip file in the root of drive <span
+ style="font-weight: bold;">E:\</span>, it will create <span
+ style="font-weight: bold;">E:\netbeans40</span>.&nbsp;
+
+Under Linux/Solaris, if you have unzipped the
+lab zip file in the <span style="font-weight: bold;">/home/sang</span>
+directory, it will create <span style="font-weight: bold;">$HOME/netbeans40</span>
+directory</li>
+  </ul>
+</ol>
+</div>
+<div style="margin-left: 40px;"><span style="font-weight: bold;"><span
+ style="color: rgb(255, 0, 0);"><a name="Notes"></a>Notes to
+JavaOne attendees using lab machines provided (This does not apply
+to
+those who use their own machines)</span><br>
+</span>
+<ul>
+  <li>The lab machines are running Java Desktop System over Solaris 10</li>
+
+  <li>In order to open a terminal window in Java Desktop System, right
+click
+any point in the background of the desktop, and select Open Terminal in
+the pop-up menu. </li>
+  <li>The following source code editors are provided on the lab machines</li>
+  <ul>
+    <li>vi (type vi in a terminal window)<br>
+    </li>
+    <li>emacs (type emacs in a terminal window)<br>
+    </li>
+
+    <li>jedit (type jedit in a terminal window)<br>
+    </li>
+    <li>NetBeans (either click NetBeans icon or type netbeans in a
+terminal window)</li>
+  </ul>
+</ul>
+</div>
+<div style="margin-left: 40px;">
+<ol>
+</ol>
+<span style="font-weight: bold;"></span><span
+ style="font-weight: bold; color: rgb(192, 192, 192);"></span></div>
+<div style="margin-left: 40px;"><span style="font-weight: bold;">Lab
+exercises</span><br>
+
+<ul>
+  <li><a href="#Exercise_0">Exercise 0: Install and configure the lab
+environment</a><br>
+  </li>
+  <li><a href="#Exercise_1">Exercise 1: Do this</a><br>
+  </li>
+  <li><a href="#Exercise_2">Exercise 2: Do that</a><br>
+  </li>
+</ul>
+
+</div>
+<ol style="margin-left: 40px;">
+</ol>
+<div style="margin-left: 40px;"><span style="font-weight: bold;">Resources</span><br>
+<ul>
+  <li><a
+ href="http://java.sun.com/j2ee/1.4/docs/tutorial/doc/JSFIntro.html#wp114889">JSF
+tutorial chapters (Chapter 17</a>, <a
+ href="http://java.sun.com/j2ee/1.4/docs/tutorial/doc/JSFPage.html#wp114889">18,</a>
+    <a
+ href="http://java.sun.com/j2ee/1.4/docs/tutorial/doc/JSFDevelop.html#wp998388">19,</a>
+    <a
+ href="http://java.sun.com/j2ee/1.4/docs/tutorial/doc/JSFCustom.html#wp113904">20,</a>
+
+    <a
+ href="http://java.sun.com/j2ee/1.4/docs/tutorial/doc/JSFConfigure.html#wp998388">21</a>)
+of <a href="http://java.sun.com/j2ee/1.4/docs/tutorial/doc/index.html">J2EE
+1.4 tutorial</a><br>
+  </li>
+  <li><a href="http://www.jsfcentral.com/">JSFCentral website (JSF
+community)</a></li>
+  <li><a
+ href="http://java.sun.com/j2ee/javaserverfaces/1.0/docs/api/index.html">JSF
+API online documentation</a></li>
+  <li><a
+ href="http://java.sun.com/j2ee/javaserverfaces/1.0/docs/tlddocs/overview-summary.html">JSF
+Tags online documentation</a><br>
+  </li>
+
+  <li><a
+ href="http://www.javapassion.com/j2eeadvanced/ClassAdvanced.html#Class_5">JSF
+related contents in the "Advanced J2EE programming with
+Passion!" online course</a><br>
+  </li>
+</ul>
+<span style="font-weight: bold;"></span><span style="font-weight: bold;">Where
+to send questions or feedbacks
+on this lab
+and public discussion forums</span><br>
+<ul>
+  <li>You can send technical questions via email to the authors of this
+Hands-on lab (and experts on the subject) or you can post the questions
+to the web. <br>
+Please post questions that are relevant only to this
+hands-on lab.</li>
+  <ul>
+    <li><a
+ href="https://hands-on-labs.dev.java.net/servlets/ForumMessageList?forumID=2548">6340_JavaME_StreamingVideo
+forum at hands-on-labs.dev.java.net</a> </li>
+
+  </ul>
+</ul>
+<ul style="margin-left: 40px;">
+  <li>You can send your other questions to the public mailing lists and
+forums.</li>
+  <ul>
+    <li><a
+ href="http://mobility.netbeans.org/servlets/SummarizeList?listName=users">Mobility
+users mailing list archive </a></li>
+  </ul>
+  <ul>
+    <li><a href="http://forum.java.sun.com/forum.jspa?forumID=76">Forum:
+Java ME Technologies - CLDC and MIDP</a></li>
+
+  </ul>
+</ul>
+<ul>
+</ul>
+</div>
+<div style="text-align: center;">
+<div style="text-align: left;"><font size="+1"><span
+ style="font-weight: bold;"></span></font><br>
+<hr style="width: 100%; height: 2px;"><br>
+<div style="margin-left: 40px;">
+<h2><a name="Exercise_0"></a>Exercise 0: <span
+ style="font-weight: bold;">Install and Configure&nbsp; Lab Environment<span
+ style="color: rgb(255, 0, 0);"></span></span></h2>
+<div style="text-align: center;"><span
+ style="font-weight: bold; color: rgb(255, 0, 0);">For
+JavaOne attendees using the lab machines provided, the steps in
+Exercise 0 are done for you as part of the login process. So please
+proceed
+to Exercise 1.</span><br>
+
+</div>
+<br>
+</div>
+<div style="margin-left: 40px;">1. Start the NetBeans 4.1 IDE and see
+if the IDE comes up<br>
+</div>
+<ul style="margin-left: 40px;">
+  <li>On Windows, <span style="font-weight: bold;">Start &gt;
+Programs &gt; NetBeans IDE &gt; NetBeans IDE 4.1 &gt; NetBeans IDE </span>or
+click NetBeans 4.1 desktop icon<span style="font-weight: bold;"><br>
+
+    </span></li>
+  <li>On Solaris, UNIX, or Linux, open a terminal window, then type <span
+ style="font-weight: bold;">&lt;netbeans41_HOME&gt;</span><span
+ style="font-family: helvetica,arial,sans-serif; font-weight: bold;">/bin/netbeans</span></li>
+</ul>
+<div style="margin-left: 40px;">2. <font size="-1">Add Sun Java App
+Server 8.1 as an
+additional Runtime platform (in addition to Tomcat 5) if you installed
+NetBeans that does not contain Sun Java System App Server PE 8.1<br>
+</font></div>
+<ul style="color: rgb(0, 0, 0);">
+  <ul>
+    <li><font size="-1">Select <span style="font-weight: bold;">Runtime
+      </span>tab</font></li>
+
+    <li><font size="-1">Right-click <span style="font-weight: bold;">Servers</span>
+and select <span style="font-weight: bold;">Add Server.&nbsp; <br>
+      </span></font></li>
+  </ul>
+</ul>
+<div style="margin-left: 80px;"><img alt=""
+ src="index_files/addserver.jpg" style="width: 671px; height: 509px;"><br>
+</div>
+<ul style="color: rgb(0, 0, 0);">
+  <ul>
+
+    <li><font size="-1">In the <span style="font-weight: bold;">Choose
+Server </span>pane of the<span style="font-weight: bold;"> Add Server
+Instance</span> window, drop down the Server field and choose <span
+ style="font-weight: bold;">Sun Java System Application Server 8.1</span>.&nbsp;
+Click<span style="font-weight: bold;"> Next</span>. <br>
+      </font></li>
+
+  </ul>
+</ul>
+<div style="margin-left: 80px;"><img alt=""
+ src="index_files/addserverinstance.jpg"
+ style="width: 608px; height: 448px;"><br>
+</div>
+<ul style="color: rgb(0, 0, 0);">
+  <ul>
+    <li><font size="-1">In the <span style="font-weight: bold;">Enter
+the Application Server location </span>pane, select Browse button and
+select installation location of the Sun Java System App server.&nbsp;
+It is c:\Sun\AppServer under Windows and $HOME/SUNWappserver
+under Linux/Solaris. Click <span style="font-weight: bold;">Next</span>.</font></li>
+
+    <li><font size="-1">In the<span style="font-weight: bold;"> Choose
+Application Server Instance</span>
+pane, <br>
+      </font></li>
+    <ul>
+      <li><font size="-1">for <span style="font-weight: bold;">Local
+Server Instance (Default Location)</span> field, select <span
+ style="font-weight: bold;">localhost:4848 (domain1) <br>
+
+        </span></font></li>
+      <li><font size="-1">for<span style="font-weight: bold;">
+Admin User Name</span> and <span style="font-weight: bold;">Admin
+Password</span> fields, type in the admin username and password.</font></li>
+      <li><font size="-1">Click <span style="font-weight: bold;">Finish</span>.</font></li>
+
+    </ul>
+  </ul>
+</ul>
+<div style="margin-left: 80px;"><img alt=""
+ src="index_files/addserverinstance2.jpg"
+ style="width: 608px; height: 448px;"><br>
+</div>
+<div style="margin-left: 40px;"><br>
+3. <font size="-1">Start
+the Sun Java System App Server.&nbsp; You can choose one
+of the following 3 options to start the App Server.&nbsp; </font>
+<ul>
+  <li><font size="-1">Option 1: From the Start menu (Windows
+platform)<br>
+
+    </font></li>
+  <ul>
+    <li><font size="-1">Start-&gt;All Programs-&gt;Sun
+Microsystems-&gt;Application Server PE-&gt;Start Default Server<br>
+      </font></li>
+  </ul>
+  <li><font size="-1">Option 2: From the command line</font></li>
+
+  <ul>
+    <li><font size="-1">Windows: c:\Sun\AppServer\bin\asadmin
+start-domain domain1 (to start admin server of domain1 and app server
+instance server1 under domain1)<br>
+      </font></li>
+    <li><font size="-1">Solaris/Linux:
+/opt/SUNWappserver/bin/asadmin start-domain domain1 </font><font
+ size="-1">(to start admin server of domain1 and app server instance
+server1 under domain1)</font></li>
+  </ul>
+  <li><font size="-1">Option 3: Within NetBeans IDE</font></li>
+  <ul>
+
+    <li><font size="-1">Select <span style="font-weight: bold;">Runtime
+      </span>tab</font></li>
+    <li><font size="-1">Expand </font><font size="-1"><span
+ style="font-weight: bold;">Servers <br>
+      </span></font></li>
+    <li><font size="-1">Right click <span style="font-weight: bold;">Sun
+Java System Application Server 8.1</span> and
+select <span style="font-weight: bold;">Start/Stop Server</span></font></li>
+
+    <li><font size="-1">If the App Server is in "<span
+ style="font-weight: bold;">Server is stopped</span>" state,
+click <span style="font-weight: bold;">Start Server </span>button</font></li>
+  </ul>
+</ul>
+<span style="font-weight: bold; text-decoration: underline;"></span>4.
+Change configuration files<br>
+<ul>
+  <li><font size="-1">Set <code
+ style="font-family: helvetica,arial,sans-serif;" class="cCode">&lt;j2ee1.4tutorial_install&gt;/j2eetutorial14</code><code
+ class="cCode"><big><span
+ style="font-family: helvetica,arial,sans-serif;">/examples/common/build.properties
+file as described</span> in <a
+ style="font-family: helvetica,arial,sans-serif;"
+ href="http://java.sun.com/j2ee/1.4/docs/tutorial/doc/About.html#wp85042">Chapter
+About This Tutorial, Section About the Examples</a></big> <big>of</big>
+
+    </code>J2EE 1.4
+tutorial.&nbsp; Basically, you set the "j2ee.home" and
+"j2ee.tutorial.home"
+properties.&nbsp; (If you encounter build failure later on, it is very
+likely that you did not set these variables or did not set them
+correctly.) Examples are as following: <br>
+    </font> </li>
+  <ul>
+    <li><font size="-1">Windows: </font><font size="-1"><span
+ style="font-weight: bold;"></span>(Windows: Use forward slash / not
+backward slash
+\; if you are using backward slash, you have to double it like \\ )</font></li>
+    <ul>
+
+      <li><font size="-1">j2ee.home=<span style="font-weight: bold;">c:\\Sun\\AppServer&nbsp;
+        </span>or<span style="font-weight: bold;">
+c:/Sun/AppServer&nbsp; </span><br>
+j2ee.tutorial.home=<span style="font-weight: bold;">c:\\j2eetutorial14 </span>or<span
+ style="font-weight: bold;">
+c:/j2eetutorial14<br>
+        </span></font></li>
+
+    </ul>
+    <li><font size="-1">Linux/Solaris:</font></li>
+    <ul>
+      <li><font size="-1">j2ee.home=<span style="font-weight: bold;">$HOME/SUNWappserver</span><span
+ style="font-weight: bold;"></span><br>
+        <span style="font-weight: bold;"></span></font><font size="-1">j2ee.tutorial.home=<span
+ style="font-weight: bold;">$HOME/j2eetutorial14 </span></font></li>
+    </ul>
+
+  </ul>
+</ul>
+<ul>
+  <li><font size="-1">Set the admin user's password in </font><font
+ style="font-family: helvetica,arial,sans-serif;" size="-1"><big><code
+ class="cCode"></code></big></font><font size="-1"><code class="cCode"><big><span
+ style="font-family: helvetica,arial,sans-serif;"> </span></big></code></font><font
+ size="-1"><span style="font-weight: normal;">&lt;j2ee1.4tutorial_install&gt;/j2eetutorial14/</span></font><font
+ size="-1"><code class="cCode"><big><span
+ style="font-family: helvetica,arial,sans-serif;">examples/common/admin-password.txt</span>
+    </big></code></font><font size="-1"><code class="cCode"><big><span
+ style="font-family: helvetica,arial,sans-serif;">as
+described under </span><a
+ style="font-family: helvetica,arial,sans-serif;"
+ href="http://java.sun.com/j2ee/1.4/docs/tutorial/doc/About.html#wp85042">Chapter
+About This Tutorial, Section About the Examples</a></big> <big>of</big>
+
+    </code>J2EE 1.4
+tutorial. Examples are as following:</font></li>
+  <ul>
+    <li><font size="-1">AS_ADMIN_PASSWORD=<span
+ style="font-weight: bold;">adminadmin&nbsp; </span>(or whatever
+password you set when you install J2EE 1.4 SDK)</font></li>
+  </ul>
+</ul>
+</div>
+<br>
+<font size="+1"><span style="font-weight: bold;"></span></font></div>
+
+<div style="text-align: left;">
+<hr style="width: 100%; height: 2px;"><br>
+<h2 class="main1">&nbsp; <a name="Exercise_1"></a>Exercise 1:&nbsp;
+Create document<br>
+</h2>
+<div style="margin-left: 40px;"><span
+ style="font-family: helvetica,arial,sans-serif;"><span
+ style="font-weight: bold; color: rgb(0, 0, 0); text-decoration: underline;">Introduction:</span></span><br>
+<span style="font-family: helvetica,arial,sans-serif;"><span
+ style="font-weight: bold; color: rgb(0, 0, 0); text-decoration: underline;"></span></span><br>
+<span style="font-family: helvetica,arial,sans-serif;"><span
+ style="font-weight: bold; color: rgb(0, 0, 0); text-decoration: underline;"></span></span>[Describe
+the learning goals of this exercise. Example is as following] <br>
+</div>
+<p class="pBody"
+ style="margin-left: 40px; font-family: helvetica,arial,sans-serif; color: rgb(0, 0, 0);">The
+goal of this exercise
+is to let you build a simple Struts application called <span
+ style="font-weight: bold;">struts-submit</span> by following step by
+step instructions.&nbsp; All the codes and build script are already
+provided in this exercise.&nbsp; Even though the application is
+simple, it
+lets you explore most core features of the Struts framework listed
+below:<br>
+
+</p>
+<div style="margin-left: 40px;">
+<ul>
+  <li>Building <span style="font-weight: bold;">ActionForm </span>class
+which captures input form data</li>
+  <li>Building <span style="font-weight: bold;">Action </span>class
+which contains business logic</li>
+  <li>Request to Action mapping which is defined in Struts
+configuration file (<span style="font-weight: bold;">struts-config.xml</span>)<br>
+
+  </li>
+  <li>Input validation <br>
+  </li>
+  <li>Error handling</li>
+  <li>Page navigation (View selection or Next page selection)<br>
+  </li>
+  <li>Usage of Struts tags</li>
+
+</ul>
+<span style="font-weight: bold; text-decoration: underline;">Background
+information:<br>
+<br>
+</span>[Technical information that need to be understood by the
+attendee to finish the lab. Examples is as following.]<br>
+<ul style="font-family: helvetica,arial,sans-serif;">
+  <li>The root directory of each lab must
+contain index.html. Each lab
+also can have corresponding PDF document but this is optional.&nbsp; (A
+zip file you will create will contain a root directory which is named
+after your lab.&nbsp; Please see <a
+ href="../../index.html#Delievrables_from_content_authors">Deliverables
+from content
+authors section</a> below.)<br>
+
+  </li>
+  <li>You are welcome to use any software
+for creating the
+HTML document.&nbsp; But for creating relatively straight-forward
+HTML document, Netscape Composer will do the job.&nbsp; Most of the
+documents for the above labs are created with Netscape composer.<br>
+  </li>
+  <li>For instructor-led handson labs,
+hard-copy printouts will be
+created from either index.html or PDF file.&nbsp; Because of this,
+index.html file of
+instructor-led labs should be a single file rather than multiple files.<br>
+  </li>
+
+  <li>Each handson lab can have other
+accompanying documents which can
+be in either PDF or HTML format<br>
+  </li>
+  <li>Tips for using Netscape composer (from
+Sang) <br>
+  </li>
+  <ul>
+    <li>Since someone asked me what would be
+the suggested tips of
+using
+Netscape Composer for writing our handson lab document,
+I thought I would share what I learned so far.&nbsp; If you know any
+other tricks and tips, please share with the team. <br>
+
+    </li>
+    <li>I use minimum features of Netscape
+composer.&nbsp;
+For example, basically all I do is to write
+heading2 for title, and bodytext for all the
+others <br>
+    </li>
+    <li>Do not use Composer generated
+numberings schemes. It will make updating your documents very
+difficult.&nbsp; Create
+numbers manually <br>
+    </li>
+    <li>For the placement of images, create a
+directory called
+index_files in the root directory and save the images in that
+directory.&nbsp; If you
+already created a document which contains
+images in different directory, open the document with netscape browser
+and then do
+"save, complete".&nbsp; The Netscape will then
+create index_files directory and save all the
+images there.&nbsp; From that point on, you save
+the newly created images there. </li>
+
+  </ul>
+</ul>
+<span style="font-weight: bold; text-decoration: underline;"></span><br>
+<span style="font-weight: bold;"><span
+ style="color: rgb(0, 0, 0); text-decoration: underline;">Steps to
+follow:</span></span><br>
+<span style="font-weight: bold;"><span
+ style="color: rgb(0, 0, 0); text-decoration: underline;"></span></span><br>
+<span style="font-weight: bold;"><span
+ style="color: rgb(0, 0, 0); text-decoration: underline;"></span></span>1.
+Using your Netscape browser, do the following:<br>
+<ul>
+  <li>Select File Menu</li>
+  <li>Select Open File</li>
+  <li>Read this document<br>
+
+  </li>
+</ul>
+2. When you see the documemt, do the following<br>
+<ul>
+  <li>Select File menu</li>
+  <li>Select <span style="font-weight: bold;">Save Page As...</span>
+as shown below in Figure-03.</li>
+</ul>
+<br>
+
+<img alt="" src="index_files/savingfile.jpg"
+ style="width: 785px; height: 688px;"><br>
+Figure-03: Save the file<br>
+</div>
+<div style="margin-left: 40px;"><br>
+3. In the <span style="font-weight: bold;">Save As</span> window, go
+to your lab directory.&nbsp; Let's say your lab code is set solaris10<span
+ style="font-weight: bold;"></span>, then you go to <span
+ style="font-weight: bold;">solaris10/index_files</span> directory and
+save the file as <span style="font-weight: bold;">index.htm</span>l
+file as shown below in Figure-04.&nbsp; Click <span
+ style="font-weight: bold;">Save </span>button.<br>
+
+<br>
+<img alt="" src="index_files/index.jpg"
+ style="width: 563px; height: 419px;"><br>
+Figure-04: How to save the template file for your lab<br>
+<br>
+4. Now you are ready to change this file.&nbsp; Whenever you want to
+save an image, save it under <span style="font-weight: bold;">solaris10/index_files
+</span>directory.<br>
+<br>
+<span style="font-weight: bold;"><span
+ style="color: rgb(0, 0, 0); text-decoration: underline;">Summary:</span></span><br>
+<span style="font-weight: bold;"><span
+ style="color: rgb(0, 0, 0); text-decoration: underline;"></span></span><br>
+<span style="font-weight: bold;"><span
+ style="color: rgb(0, 0, 0); text-decoration: underline;"></span></span>In
+this exercise, you learned how to create your hands-on lab document.<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="../basicjsf/index.html#Lab_exercises:_">return
+to the top</a><br>
+</div>
+<hr style="width: 100%; height: 2px;"><br>
+<h2 class="main1"><a name="Exercise_2"></a>Exercise 2: Something (45
+minutes)<br>
+</h2>
+<div style="margin-left: 40px;"><span
+ style="font-family: helvetica,arial,sans-serif;"><span
+ style="font-weight: bold; color: rgb(0, 0, 0); text-decoration: underline;">Introduction:</span></span></div>
+<br>
+<div style="margin-left: 40px;">In this exercise, you learn
+the internal architecture of the "guessNumber" application by following
+step-by-step development process.&nbsp; You can follow this development
+process to build your own JSF application later on.
+</div>
+<div style="margin-left: 40px;"><span
+ style="font-family: helvetica,arial,sans-serif;"><span
+ style="font-weight: bold; color: rgb(0, 0, 0); text-decoration: underline;"></span></span><br>
+<br>
+
+<span style="font-weight: bold; text-decoration: underline;">Steps to
+follow:</span><br>
+<br>
+TBD<br>
+<br>
+<span style="text-decoration: underline; font-weight: bold;">Summary:</span><br>
+<br>
+TBD<br>
+</div>
+<!--THE ORIGINAL TABLE FROM THE TEMPLATE
+    ..ALL THE TEXT WAS IN THE TD
+	..BUT THE H1..H4 HEADINGS WERE ALL THE SAME SIZE, INSIDE THE TABLE					
+<table border="0" cellpadding="0" cellspacing="10" width="100%" height="1022">
+  <tbody>
+    <tr>
+      <td valign="top" height="971">
+      </td>
+    </tr>
+    <!.. BEGIN SPACER ROW ..>
+    <!.. END SPACER ROW ..>
+  </tbody>
+</table>
+-->
+<div style="margin-left: 40px;"><span class="sp5"></span><br>
+</div>
+<hr style="width: 100%; height: 2px;"><br>
+<h2 class="main1"><a name="Exercise_2"></a>Exercise 3: Something (45
+minutes)<br>
+
+</h2>
+<div style="margin-left: 40px;"><span
+ style="font-family: helvetica,arial,sans-serif;"><span
+ style="font-weight: bold; color: rgb(0, 0, 0); text-decoration: underline;">Learning
+goals of this exercise:</span></span></div>
+<br>
+<div style="margin-left: 40px;">In this exercise, you learn
+the internal architecture of the "guessNumber" application by following
+step-by-step development process.&nbsp; You can follow this development
+process to build your own JSF application later on.
+</div>
+<div style="margin-left: 40px;"><span
+ style="font-family: helvetica,arial,sans-serif;"><span
+ style="font-weight: bold; color: rgb(0, 0, 0); text-decoration: underline;"></span></span><br>
+</div>
+<!--THE ORIGINAL TABLE FROM THE TEMPLATE
+    ..ALL THE TEXT WAS IN THE TD
+	..BUT THE H1..H4 HEADINGS WERE ALL THE SAME SIZE, INSIDE THE TABLE					
+<table border="0" cellpadding="0" cellspacing="10" width="100%" height="1022">
+  <tbody>
+    <tr>
+      <td valign="top" height="971">
+      </td>
+    </tr>
+    <!.. BEGIN SPACER ROW ..>
+    <!.. END SPACER ROW ..>
+  </tbody>
+</table>
+-->
+<div style="margin-left: 40px;"><span
+ style="font-weight: bold; text-decoration: underline;">Steps to follow:</span><br>
+<br>
+TBD<br>
+<br>
+
+<span style="text-decoration: underline; font-weight: bold;">Summary:</span><br>
+<br>
+TBD<br>
+<br>
+</div>
+<hr style="width: 100%; height: 2px;">
+<p style="text-align: center;"><small><small><font
+ style="color: rgb(0, 0, 0);" size="-1"><small><small><span
+ style="font-weight: bold;"><a name="Congratulation"></a>Congratulation!
+</span></small></small></font></small><font style="color: rgb(0, 0, 0);"
+ size="-1"><span style="font-weight: bold;">You have successfully
+completed the <br>
+</span></font></small><small><small><font style="color: rgb(0, 0, 0);"
+ size="-1"><small><small><span style="font-weight: bold;">"LAB-xxxx:
+&lt;title of the lab&gt;</span></small></small></font><font
+ style="color: rgb(0, 0, 0);" size="-1"><small><small><span
+ style="font-weight: bold;">" Hands-on lab.<br>
+</span></small></small></font></small></small></p>
+<p style="text-align: left; margin-left: 40px;"><small><small><font
+ style="color: rgb(0, 0, 0);" size="-1"><small><small><span
+ style="font-weight: bold;"></span></small></small></font><font
+ size="+1"><small><small><span style="font-weight: bold;"></span></small></small></font></small></small><span
+ style="font-weight: bold;">Where to send questions or feedbacks
+on this lab and public discussion forums</span><br>
+
+</p>
+<ul style="margin-left: 40px;">
+  <li>You can send technical questions via email to the authors of this
+Hands-on lab (and experts on the subject) or you can post the questions
+to the web. <br>
+Please post questions that are relevant only to this
+hands-on lab.</li>
+  <ul>
+    <li><a
+ href="https://hands-on-labs.dev.java.net/servlets/ForumMessageList?forumID=2548">6340_JavaME_StreamingVideo
+forum at hands-on-labs.dev.java.net</a> </li>
+  </ul>
+</ul>
+<ul style="margin-left: 40px;">
+
+  <li>You can send your other questions to the public mailing lists and
+forums.</li>
+  <ul>
+    <li><a
+ href="http://mobility.netbeans.org/servlets/SummarizeList?listName=users">Mobility
+users mailing list archive </a></li>
+  </ul>
+  <ul>
+    <li><a href="http://forum.java.sun.com/forum.jspa?forumID=76">Forum:
+Java ME Technologies - CLDC and MIDP</a></li>
+  </ul>
+
+</ul>
+<div style="margin-left: 40px;"><br>
+</div>
+Note for developers: <br>
+You have to update it according to your lab. It means change the forum
+link and
+name (list of forums -
+<a class="moz-txt-link-freetext"
+ href="https://hands-on-labs.dev.java.net/servlets/ProjectForumView">https://hands-on-labs.dev.java.net/servlets/ProjectForumView</a>),
+<br>
+change
+the public forums and mailing list<br>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+</div>
+</div>
+<table style="color: rgb(0, 0, 0);" border="0" cellpadding="0"
+ cellspacing="10" width="100%">
+  <tbody>
+
+    <tr>
+      <td class="grey1"><span class="sp5"></span><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="sitelinks" align="center"> <a
+ href="http://wwws.sun.com/company/" style="color: rgb(0, 0, 0);">Company
+Info</a><span style="color: rgb(0, 0, 0);">
+&nbsp;&nbsp;|&nbsp;&nbsp; </span><a href="http://wwws.sun.com/contact/"
+ style="color: rgb(0, 0, 0);">Contact</a><span
+ style="color: rgb(0, 0, 0);">
+
+&nbsp;&nbsp;|</span>&nbsp;&nbsp; <a name="Copyright_2005"></a>Copyright
+2007 Sun Microsystems <br>
+</div>
+<!-- END GLOBAL FOOTER -->
+</body>
+</html>

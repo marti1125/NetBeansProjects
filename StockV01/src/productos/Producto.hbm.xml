@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12/10/2010 08:40:14 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="stock01" name="productos.Producto" table="producto">
+    <id name="codigo" type="java.lang.Integer">
+      <column name="codigo"/>
+      <generator class="identity"/>
+    </id>
+    <property name="descripcion" type="string">
+      <column name="descripcion"/>
+    </property>
+    <property name="categoria" type="string">
+      <column name="categoria"/>
+    </property>
+    <property name="cantidad" type="java.lang.Integer">
+      <column name="cantidad"/>
+    </property>
+    <property name="costo" type="java.lang.Double">
+      <column name="costo" precision="22" scale="0"/>
+    </property>
+    <property name="precio" type="java.lang.Double">
+      <column name="precio" precision="22" scale="0"/>
+    </property>
+    <property name="fecing" type="date">
+      <column length="10" name="fecing"/>
+    </property>
+    <property name="estado" type="string">
+      <column name="estado"/>
+    </property>
+  </class>
+</hibernate-mapping>

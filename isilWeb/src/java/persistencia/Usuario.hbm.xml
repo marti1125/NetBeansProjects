@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/04/2010 08:17:45 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="persistencia.Usuario" table="usuario" catalog="gestion">
+        <id name="codigo" type="string">
+            <column name="CODIGO" length="10" />
+            <generator class="assigned" />
+        </id>
+        <property name="alias" type="string">
+            <column name="ALIAS" length="10" />
+        </property>
+        <property name="clave" type="string">
+            <column name="CLAVE" length="10" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" length="40" />
+        </property>
+        <property name="acceso" type="java.lang.Integer">
+            <column name="ACCESO" />
+        </property>
+    </class>
+</hibernate-mapping>

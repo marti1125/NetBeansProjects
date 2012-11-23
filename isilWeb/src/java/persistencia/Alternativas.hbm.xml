@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/04/2010 08:17:45 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="persistencia.Alternativas" table="alternativas" catalog="gestion">
+        <composite-id name="id" class="persistencia.AlternativasId">
+            <key-property name="semestre" type="string">
+                <column name="SEMESTRE" length="10" />
+            </key-property>
+            <key-property name="curso" type="string">
+                <column name="CURSO" length="10" />
+            </key-property>
+            <key-property name="grupo" type="string">
+                <column name="GRUPO" length="10" />
+            </key-property>
+            <key-property name="pregunta" type="int">
+                <column name="PREGUNTA" />
+            </key-property>
+            <key-property name="opcion" type="int">
+                <column name="OPCION" />
+            </key-property>
+        </composite-id>
+        <property name="valor" type="string">
+            <column name="VALOR" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 10-may-2010 15:42:27 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="joyeria.Ingreso" table="Ingreso" schema="dbo" catalog="Joyeria">
+        <id name="idIngreso" type="int">
+            <column name="IdIngreso" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="proveedor" class="joyeria.Proveedor" fetch="select">
+            <column name="IdProveedor" length="50" not-null="true" />
+        </many-to-one>
+        <property name="tipoIngreso" type="string">
+            <column name="TipoIngreso" length="50" not-null="true" />
+        </property>
+        <property name="tipoDoc" type="string">
+            <column name="TipoDoc" length="50" not-null="true" />
+        </property>
+        <property name="serieDocIngreso" type="string">
+            <column name="SerieDocIngreso" length="50" not-null="true" />
+        </property>
+        <property name="numeroDoc" type="string">
+            <column name="NumeroDoc" length="50" not-null="true" />
+        </property>
+        <property name="fechaIngreso" type="timestamp">
+            <column name="FechaIngreso" length="23" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24/11/2010 08:39:35 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="jstore.ProductoDetalle" table="Producto_Detalle" catalog="jstore">
+        <id name="codigoProductoDell" type="java.lang.Integer">
+            <column name="codigoProductoDell" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="tienda" class="jstore.Tienda" fetch="select">
+            <column name="codTienda" />
+        </many-to-one>
+        <many-to-one name="producto" class="jstore.Producto" fetch="select">
+            <column name="codProducto" />
+        </many-to-one>
+        <many-to-one name="proveedor" class="jstore.Proveedor" fetch="select">
+            <column name="codProveedor" />
+        </many-to-one>
+        <many-to-one name="categoria" class="jstore.Categoria" fetch="select">
+            <column name="codCategoria" />
+        </many-to-one>
+        <property name="cantidad" type="java.lang.Integer">
+            <column name="cantidad" />
+        </property>
+        <property name="costo" type="java.lang.Double">
+            <column name="costo" precision="22" scale="0" />
+        </property>
+        <property name="precio" type="java.lang.Double">
+            <column name="precio" precision="22" scale="0" />
+        </property>
+        <property name="fecCreacion" type="date">
+            <column name="fecCreacion" length="10" />
+        </property>
+        <property name="estado" type="string">
+            <column name="estado" length="10" />
+        </property>
+        <set name="movimientos" inverse="true">
+            <key>
+                <column name="codProductoDell" />
+            </key>
+            <one-to-many class="jstore.Movimiento" />
+        </set>
+    </class>
+</hibernate-mapping>

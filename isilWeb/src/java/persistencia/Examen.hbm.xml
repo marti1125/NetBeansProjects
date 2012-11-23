@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/04/2010 08:17:45 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="persistencia.Examen" table="examen" catalog="gestion">
+        <composite-id name="id" class="persistencia.ExamenId">
+            <key-property name="semestre" type="string">
+                <column name="SEMESTRE" length="10" />
+            </key-property>
+            <key-property name="curso" type="string">
+                <column name="CURSO" length="10" />
+            </key-property>
+            <key-property name="grupo" type="int">
+                <column name="GRUPO" />
+            </key-property>
+            <key-property name="pregunta" type="int">
+                <column name="PREGUNTA" />
+            </key-property>
+        </composite-id>
+        <property name="enunciado" type="string">
+            <column name="ENUNCIADO" />
+        </property>
+        <property name="puntaje" type="java.lang.Integer">
+            <column name="PUNTAJE" />
+        </property>
+        <property name="tipo" type="string">
+            <column name="TIPO" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

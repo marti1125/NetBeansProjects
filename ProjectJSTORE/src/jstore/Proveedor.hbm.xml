@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24/11/2010 08:39:35 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="jstore.Proveedor" table="Proveedor" catalog="jstore">
+        <id name="codigoProveedor" type="java.lang.Integer">
+            <column name="codigoProveedor" />
+            <generator class="identity" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" />
+        </property>
+        <property name="ubicacion" type="string">
+            <column name="ubicacion" />
+        </property>
+        <property name="fecCreacion" type="date">
+            <column name="fecCreacion" length="10" />
+        </property>
+        <set name="proveedorEstados" inverse="true">
+            <key>
+                <column name="codProveedor" />
+            </key>
+            <one-to-many class="jstore.ProveedorEstado" />
+        </set>
+        <set name="contactos" inverse="true">
+            <key>
+                <column name="codProveedor" />
+            </key>
+            <one-to-many class="jstore.Contacto" />
+        </set>
+        <set name="productoDetalles" inverse="true">
+            <key>
+                <column name="codProveedor" />
+            </key>
+            <one-to-many class="jstore.ProductoDetalle" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/04/2010 08:17:45 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="persistencia.Alumno" table="alumno" catalog="gestion">
+        <id name="codigo" type="string">
+            <column name="CODIGO" length="10" />
+            <generator class="assigned" />
+        </id>
+        <property name="paterno" type="string">
+            <column name="PATERNO" length="40" />
+        </property>
+        <property name="materno" type="string">
+            <column name="MATERNO" length="40" />
+        </property>
+        <property name="nombres" type="string">
+            <column name="NOMBRES" length="40" />
+        </property>
+        <property name="ciclo" type="java.lang.Integer">
+            <column name="CICLO" />
+        </property>
+        <property name="fecNac" type="timestamp">
+            <column name="FEC_NAC" length="19" />
+        </property>
+        <property name="pago" type="string">
+            <column name="PAGO" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="Joyeria" match-schema="dbo"/>
+  <table-filter match-name="Producto"/>
+  <table-filter match-name="TipoDocumentos"/>
+  <table-filter match-name="Vendedor"/>
+  <table-filter match-name="DetalleIngreso"/>
+  <table-filter match-name="Ingreso"/>
+  <table-filter match-name="Proveedor"/>
+  <table-filter match-name="Familia"/>
+</hibernate-reverse-engineering>

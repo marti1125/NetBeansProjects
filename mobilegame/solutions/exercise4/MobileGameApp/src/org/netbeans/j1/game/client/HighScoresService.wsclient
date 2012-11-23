@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsclientconfig serviceType="jsr-172" version="1.0">
+    <client>
+        <project>MobileGameApp</project>
+        <class location="${src.dir}" type="org.netbeans.j1.game.client.HighScoresService"/>
+        <property name="DataBinding" value="false"/>
+        <property name="cldc11" value="true"/>
+    </client>
+    <services>
+        <service file="HighScoresService.wsdl" url="http://lukas-notebook:8080/DukeHighScores/HighScoresService?WSDL"/>
+    </services>
+</wsclientconfig>

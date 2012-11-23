@@ -1,0 +1,176 @@
+<html>
+    <head>
+        <meta name="j1holtabname" content="Exercise 3: Logic of the game">
+    </head>
+    <body>
+        <div class="j1holcontents">
+            
+            <h2><a name="Exercise_3"></a>Exercise 3: Logic of the game</h2>
+            
+            <div class="j1holduration xbig">Expected duration: 20 minutes</div>
+            
+            <p class="j1holheader">Introduction:</p>
+            
+            <p>
+                The logic of our game is quite simple. There is the Duke creature walking in a maze. 
+                The Duke is looking for James Gosling who is lost somewhere in the maze. 
+                When he finds James the game ends.<br>
+                
+                We created the sprites in previous exercise. We also created one level of our game.<br><br>
+                
+                Duke can move left and right. He can jump. When there is no floor under his feets then he starts falling. 
+                <br>
+                The code for movement of the duke is based on the example provided by Carol Hamer in <a href="http://apress.com/book/view/1590598806">"Creating Mobile Games: Using Java ME Platform to Put the Fun into Your Mobile Device and Cell Phone" by Appress</a>. 
+            </p>
+            
+            <p class="j1holheader">Steps to follow:</p>
+            
+            <ul class="j1hollist">
+                <li>Initialize the MazeManager</li>
+                <li>Let the duke move</li>
+                
+            </ul>
+            <br>
+            <p class="j1holsubheader">Step 1: Initialize the MazeManager</p>
+            <ol>
+                <li>
+                    There are following classes created for you in the <b>org.netbeans.j1.game.logic</b> package that
+                    take care about processing the game. The GameTread.java class runs in separate thread to 
+                    not block the game ui. The MazeManager.java class takes care about the interaction among the 
+                    sprites and tiled layers in the game.<br><br>
+                    At first we have to initialize all the game parts. Copy and paste code in bold to init method 
+                    of the MazeManager class.
+                    <div class="codebox">
+                        <pre>                            
+    public void init() throws Exception {    
+        //TODO: [Exercise 3][step 1] - initialization code. Please, don't forget to fix the missing imports and fields
+ <b>       mazeDesign = new MazeGameDesign(); //[Exercise3]
+        jamesSprite = mazeDesign.getJamesS();//[Exercise3]
+        dukeSprite = mazeDesign.getDukeS();//[Exercise3]
+        dukeSprite.defineReferencePixel(dukeSprite.getWidth() / 2, 0);//[Exercise3]
+        dukeSpriteAnimator = new SpriteAnimationTask(dukeSprite, false);//[Exercise3]
+        myWalls = mazeDesign.getMaze1();//[Exercise3]
+        mazeDesign.updateLayerManagerForLevel1(this);//[Exercise3]
+
+        timer = new Timer();//[Exercise3]
+        timer.scheduleAtFixedRate(dukeSpriteAnimator, 0, mazeDesign.dukeSseq001Delay);//[Exercise3]</b>
+        // this sets the view screen so that the player is 
+        // in the center.
+        myViewWindowX = dukeSprite.getX() - ((DISP_HEIGHT - SQUARE_WIDTH) / 2);
+        myViewWindowY = dukeSprite.getY() - ((DISP_HEIGHT - SQUARE_WIDTH) / 2);
+
+        System.gc();
+                        }                        </pre>
+                    </div>
+                </li>
+                <li>
+                    Fix the missing import for MazeGameDesign class.
+                    You can use the hint bulb to fix the code. Just press the bulb on the glyph or ALT+ENTER on the line with errors.<br><br>
+                    <img src="index_files/screenshots/ex3-fix-the-code.png" alt="Hints" />
+                    <br>
+                    Figure-3-1: Hints <br><br>
+                    
+                </li>
+                <li>
+                    Create new field <b>mazeDesign</b> in the class. You can use the hint again.
+                    
+                </li>                    
+                <li>
+                    Now the game is ready to be played. You can run the application.
+                    Right click the <b>MobileGameApp</b> project and choose <b>Run</b>.
+                </li>   
+                <li>
+                    When the emulator window appears launch the application.
+                    <br>            
+                    <table>
+                        <tr><td>
+                                <img src="index_files/screenshots/ex3-runGame_1.png" alt="Screenshot of game running in emulator" />
+                                <br>
+                                Figure-3-2: Launch game
+                            </td><td>
+                                <img src="index_files/screenshots/ex3-runGame_0.png" alt="Screenshot of game running in emulator" />
+                                <br>
+                                Figure-3-3: Splash screen
+                        </td></tr>
+                    </table>
+                    <br><br>
+                    <br>   
+                    <table>
+                        <tr><td>
+                                <img src="index_files/screenshots/ex3-runGame_2.png" alt="Screenshot of game running in emulator" />
+                                <br>
+                                Figure-3-4: Main menu
+                            </td><td>            
+                                <img src="index_files/screenshots/ex3-runGame_3.png" alt="Screenshot of Java ME Webservice Client Wizard" />
+                                <br>
+                                Figure-3-5: Game running
+                                
+                        </td></tr>
+                    </table>
+                    <br><br>
+                </li>
+            </ol>
+            
+            <p class="j1holsubheader">Step 2: Let the duke move</p>
+            <p>We need to set up the right sequence to the duke sprite when he is walking, jumping or falling.</p>
+            <ol>
+                <li>                     
+                    It can be done in <b>MazeManager</b> class in method <b>updateSprite</b>. 
+                    Just uncomment the four lines ending with //TODO: [Exercise 3][step 2].
+                    It will add the code that changes the sequence of tiles for duke sprite. 
+                    Therefore the duke will either walk or fall or jump.
+                </li>
+                <li>
+                The source code of the updateSprite() method will look in following way. The bold lines are the uncommented ones.
+                <div class="codebox">
+                    
+                    <pre>      
+    private void updateSprite(int hdirection, int vdirection) {
+        // if the duke is moving left or right, we set 
+        // his image to be facing the right direction
+        if (hdirection > 0) {
+            dukeSprite.setTransform(Sprite.TRANS_NONE);
+        } else if (hdirection < 0) {
+            dukeSprite.setTransform(Sprite.TRANS_MIRROR);
+        }
+        //in case that duke is moving, change the showing sprite image
+        if (lastHorDirection != hdirection) {
+        <b>dukeSprite.setFrameSequence(mazeDesign.dukeSseq001); </b>//TODO: [Exercise 3][step 2] Let the duke move set to vertical sequence
+        }
+
+        if (lastVertDirection != vdirection) {
+            if (vdirection > 0) { //he's jumping
+            <b>dukeSprite.setFrameSequence(mazeDesign.dukeSfalling);</b>//TODO: [Exercise 3][step 2] set to falling sequence
+            } else if (vdirection < 0) {
+            <b>dukeSprite.setFrameSequence(mazeDesign.dukeSjumping);</b>//TODO: [Exercise 3][step 2] set to jumping sequence
+            }
+        }
+
+        if ((vdirection != 0) || (hdirection != 0)) {
+            dukeSpriteAnimator.forward();
+        } else {
+            dukeSpriteAnimator.setMoving(false);
+            <b>dukeSprite.setFrameSequence(mazeDesign.dukeSseq001); </b>//TODO: [Exercise 3][step 2] set to vertical sequence
+        }
+
+        lastHorDirection = hdirection;
+        lastVertDirection = vdirection;
+
+    }
+                    </pre>
+                </div>
+            </ol>
+            
+            <p class="j1holheader">Summary:</p>
+            
+            <p>
+                You created necessary logic for the game. You can now play the game. As you can see the work with the Sprites and TiledLayers 
+                is quite simple thank to the Game API. The game logic isn't so complicated however the description of it is beyond scope 
+                of this hands-on lab class. The source code is well described with comments and javadoc therefore you can study it later.
+            </p>
+            
+            <p><a href="#Exercise_4">Go on to next exercise</a></p>            
+            <p><a href="#Summary">Go on to summary</a></p>
+        </div>
+    </body>
+</html>

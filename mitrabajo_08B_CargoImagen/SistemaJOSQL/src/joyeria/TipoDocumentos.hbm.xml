@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 10-may-2010 15:42:27 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="joyeria.TipoDocumentos" table="TipoDocumentos" schema="dbo" catalog="Joyeria">
+        <id name="idTipoDoc" type="int">
+            <column name="IdTipoDoc" />
+            <generator class="identity" />
+        </id>
+        <property name="descripcion" type="string">
+            <column name="Descripcion" length="50" not-null="true" />
+        </property>
+        <set name="vendedors" inverse="true">
+            <key>
+                <column name="IdTipoDoc" not-null="true" />
+            </key>
+            <one-to-many class="joyeria.Vendedor" />
+        </set>
+    </class>
+</hibernate-mapping>

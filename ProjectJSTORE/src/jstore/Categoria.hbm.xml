@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24/11/2010 08:39:35 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="jstore.Categoria" table="Categoria" catalog="jstore">
+        <id name="codigoCategoria" type="java.lang.Integer">
+            <column name="codigoCategoria" />
+            <generator class="identity" />
+        </id>
+        <property name="categoria" type="string">
+            <column name="categoria" length="100" />
+        </property>
+        <set name="productoDetalles" inverse="true">
+            <key>
+                <column name="codCategoria" />
+            </key>
+            <one-to-many class="jstore.ProductoDetalle" />
+        </set>
+    </class>
+</hibernate-mapping>

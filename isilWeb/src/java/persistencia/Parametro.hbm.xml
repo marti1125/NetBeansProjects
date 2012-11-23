@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/04/2010 08:17:45 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="persistencia.Parametro" table="parametro" catalog="gestion">
+        <composite-id name="id" class="persistencia.ParametroId">
+            <key-property name="parTabla" type="int">
+                <column name="PAR_TABLA" />
+            </key-property>
+            <key-property name="parCod" type="string">
+                <column name="PAR_COD" length="7" />
+            </key-property>
+        </composite-id>
+        <property name="parDsc" type="string">
+            <column name="PAR_DSC" length="40" />
+        </property>
+    </class>
+</hibernate-mapping>

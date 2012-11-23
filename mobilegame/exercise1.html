@@ -1,0 +1,288 @@
+<html>
+    <head>
+        <meta name="j1holtabname" content="Exercise 1: Creating app">
+        <title></title>
+        <style type="text/css">
+            <!--
+            .style1 {font-family: Arial, Helvetica, sans-serif}
+            -->
+        </style>
+    </head>
+    <body>
+        <div>
+            <blockquote><span class="j1holcontents">
+                    <h1><a name="Exercise_1"></a>Exercise 1: Creating a MIDP application using visual tools</h1>
+            </span></blockquote>
+            <span class="j1holcontents">
+                <div class="j1holduration xbig">Expected duration: 20 minutes</div>
+            </span>
+            <blockquote>
+                <p class="j1holcontents">Introduction:</p>
+                <p class="j1holcontents">The goal of this exercise is to let you experience the features of NetBeans Mobility by              building and running a simple mobile application and modify the flow of the game application that you will use later to build a mobile game.You will learn following things in this exercise:</p>
+                <ul>
+                    <li class="j1holcontents">How to create a new Mobile project</li>
+                    <li class="j1holcontents">How to build and run the project</li>
+                    <li class="j1holcontents">Add Custom Component to the palette.</li>
+                    <li class="j1holcontents">How to modify the flow of the Visual game application<br>
+                    </li>
+                </ul>
+                <p class="j1holcontents">Background information:</p>
+                <p align="justify"><span class="j1holcontents"><b>NetBeans Mobility</b> makes it easy for all programmers to
+                        start developing for the Java ME platform quickly, even if you've only
+                        had Java SE programming experience. If you are programming mobile devices for the first time, 
+                        you can just think of Java ME as having
+                        a more limited version of the Java SE API, and let NetBeans Mobility
+                        Pack take care of the foreign Java ME issues. Though there are more
+                        differences than just a smaller API, it's not necessary to know all deeps before
+                        producing a working mobile application. To help you
+                        get started, here are some terms that are used throughout this
+                        document: 
+                </span>              </p>
+                <p align="justify">                    
+                <span class="j1holcontents"></span>              </p>
+                <ul>
+                    <li><span style="font-weight: bold;">Java ME</span> &#8211; Java Platform,
+                        Micro Edition is the Java platform meant to run on small devices.&nbsp;
+                        Currently, these devices are typically cell phones or PDAs, but Java ME
+                        is also used on other embedded systems.&nbsp; A configuration, profile,
+                    and optional packages are what compose a Java ME platform. </li>
+                    <li><span style="font-weight: bold;">CLDC</span> &#8211; Connected Limited
+                        Device Configuration is a Java ME configuration that is currently most
+                        often used on mobile phones.&nbsp; It contains a runtime environment
+                        and a core API that are appropriate for the limited processor speed and
+                    memory size of mobile devices.</li>
+                    <li><span style="font-weight: bold;">MIDP</span> &#8211; Mobile
+                        Information Device Profile is the set of APIs that provide higher level
+                        functionality required by mobile applications like displayable
+                    components and network communication.</li>
+                    <li><span style="font-weight: bold;">MIDlet</span> &#8211; A class required
+                        by all MIDP applications.&nbsp; It acts as the interface between the
+                        application and the device on which it is running.&nbsp; Similar to a
+                    main class in a Java SE project.</li>
+                    <li><span style="font-weight: bold;">Emulator</span> &#8211; a tool which
+                        can run your mobility applications. The emulator usually mimics the
+                    behavior of the real phone it is emulating.</li>
+                    <li><span style="font-weight: bold;">Platform</span> &#8211; a Java
+                        development kit used to build and run the project in the NetBeans IDE.
+                    For Mobile project this usually means emulator, building tools and various JARs that implement Java ME API.</li>
+                    <li><span style="font-weight: bold;">WTK</span> &#8211; <span
+                            style="font-weight: bold;">Sun Java Wireless Toolkit for CLDC 2.5.2</span> - a reference implementation of Java ME's CDLC configuration and MIDP
+                        profile. Bundled with NetBeans Mobility. Also includes the various
+                    building tools. </li>
+                    <li><b>JSR172</b> &#8211; J2ME Web Service API. Optional package of J2ME
+                    defining API for connecting to a web service. </li>
+                </ul>
+                <p class="j1holcontents">Steps to Follow:</p>
+                <ul>
+                    <li class="j1holcontents">Create a Mobile Project.<br>
+                    </li>
+                    <li class="j1holcontents">Build and run the project</li>
+                    <li class="j1holcontents">Add Custom Component to the palette.<br>
+                    </li>
+                    <li class="j1holcontents">Define the flow of the game application<br>
+                    </li>
+                </ul>
+                <p class="j1holsubheader">Step 1: Create a Mobile Project</p>
+                The first step for any application you develop in NetBeans is to
+                create a project. The project contains all the files that make up the              
+                mobile application. 
+                <ol>
+                    <li> To create a new project select <strong>File &gt; New Project</strong> 
+                        or press New Project toolbar icon. 
+                    </li>
+                    <li>A <strong>New Project</strong> dialog box appears, asking you to choose project              
+                        category and type. Select <strong>Mobile</strong> category and <strong>MIDP              
+                    Application</strong> project.</li> 
+                    <li>Click <strong>Next</strong> and the wizard continues              
+                        by asking to name the project. Name this project <strong>Hello</strong>.              
+                    </li>
+                    <li>Make sure <strong>Set as Main Project</strong> and <strong>Create Hello MIDlet</strong> 
+                        check boxes are marked as selected and click <strong>Next</strong>.Click <strong>Finish </strong>
+                        to create the project. Your project appears with the HelloMidlet open in the visual              
+                        designer(Figure-1-1).<br>
+                        <br>
+                        <img src="index_files/screenshots/ex1-helloMidlet.PNG" width="719" height="709"><br>
+                        Figure-1-1: HelloMidlet in the visual designer<br>
+                    <br></li>
+                    <li>Select Alert component from the Displayables category in the Palette Window.</li>
+                    <li>Drag&amp;Drop the Alert screen from palette to the Visual Designer Flow view.</li> 
+                    <li>Component named <strong>alert</strong> appears (Figure-1-2). By this simple operation you just added a screen              component to the design.<br>
+                        <br>
+                        <img src="index_files/screenshots/ex1-helloMidlet-alert.PNG" alt="" width="713">
+                        <br>Figure-1-2: Alert component added to the flow <br><br>
+                    </li>
+                    <li>Now change the title of the alert, so it says "Help" - to do so you can simply              
+                    click on the <strong>Title</strong> property (in the properties window located              
+                    in the right-bottom corner of the IDE) and type in the text. 
+                </li>                    
+                    <li>The next step is to change the text the alert displays to the user -              
+                    e.g. "This is Help for Hello Midlet".  Switch to the Screen designer 
+                    (using <strong>Screen </strong> button). 
+                </li>
+                <li>Select the Alert component in 
+                    combo box at the top of the document window. 
+                    It will show the alert component in the Device Screen area of the document.
+                </li>
+                <li>Move the mouse over the edit screen, 
+                    over the &lt; text not specified &gt; area and a blue box should appear, 
+                    informing you that the text can be edited. Clicking on the blue box.  
+                    In the editor type the new text and press <strong>Enter.</strong> 
+                    </li>
+                    <li>Switch back to the flow designer and drag <strong>Help Command</strong> from the palette and drop it on              
+                    the <strong>form</strong> component. <strong>Help</strong> message               
+                    is added to <strong>form</strong> component.
+                    </li>
+                    <li>The next task is to connect this help command with our              
+                        help component (alert) you've just created. Select <i>helpCommand</i> in the <i>form</i> component 
+                        and drag it to the <i>alert</i> component (you should see a line with arrow while dragging) and              
+                    drop it on the <strong>alert</strong> component. 
+                </li>
+                <li>The components should be now              
+                    connected together (Figure-1-7 - Alert component is able to automatically return to the component 
+                    from which it was displayed, thus two lines were actually created - one from              
+                    <i>form</i> to <i>alert</i> and the second from <i>alert</i> back to <i>form</i>).<br>
+                        <br>
+                        <br>
+                        <img src="index_files/screenshots/ex1-helloMidlet-alert-connected.PNG" alt="" width="480"><br>
+                    Figure-1-3: alert component is linked with Help command on helloForm.</li>
+                </ol>
+                <p class="j1holsubheader">Step 2: Build and Running the Project</p>
+                <ol>
+                    <li>Run the application with <strong>Run &gt; Run Main Project</strong> or simply by              
+                    clicking on green arrow or hitting F6 key. This saves all files, builds the project 
+                    (you should see progress of building in output window) and starts the emulator with the HelloMidlet.</li>
+                    <li> Launch the application, and see the &ldquo;Hello&rdquo; form (Figure-1-4), 
+                    press the Help button. Don't forget to close the emulator when you are done with the application 
+                    (you can exit the emulator either with close button on the emulator's window or 
+                    by hitting power-off button in the top-right area, just above the display).</li>
+                </ol>
+                <blockquote>
+                    <p><img src="index_files/screenshots/ex1-emulator.PNG" /></p>
+                </blockquote>
+                <p>Figure-1-4: Emulator running the HelloMidlet</p>
+                <br><br>
+                <p><i>
+                    If the emulator doesn't start up then it might be problem with path to the java.
+                    Please, look at the FAQ describing the problem - 
+                    <a href="http://wiki.netbeans.org/FaqMobilityUbuntu710">WTK and default java</a>.
+            </i></p>
+                
+                <p class="j1holsubheader">Step 3: Add Custom Component to the palette.</p>
+                <p>In this step you are going to register a canvas component to the component palette, 
+                so it can be used in the visual designer. You can find components provided by MIDP and 
+                custom components of the NetBeans Mobility in the palette. The screen components can be used to 
+                visualy design a flow of an application. Other components will be used to create user 
+                interface of particular screens. You can use your own components to design your application. 
+                A custom component has to be added to the palette before it can be used in the visual designer. </p>
+                <ol>
+                    <li> Now you are going to use a project, which contains some functionality already. 
+                    Open the project by choosing <strong>File &gt; Open Project</strong>. A filechooser  dialog appears. 
+                </li>
+                <li>Select project <strong>MobileGameApp</strong> in <b>&lt;lab_root&gt;/exercises/exercise1/</b> directory and              
+                    ensure that <strong>Open as Main Project</strong> is checked. 
+                </li>
+                <li>The project opens and appears in <strong>Projects</strong> tab in the IDE. 
+                    Make sure the project is set as main 
+                    (project node should be in bold. If not, right-click on the project node and choose 
+                    <strong>Set as Main Project</strong> from pop-up menu to make it main).</li>
+                    <li>Expand the <b>Project node &gt;Source Packages&gt;org.netbeans.j1.game&gt;GameMIDlet.java</b>
+                    and double click on the file. It will open the flow design of our game application.(Figure-1-5)
+                    <br>
+                        <img src="index_files/screenshots/ex1-gameVD.png"><br>
+                        Figure-1-5: GameMIDlet in the flow design <br><br>
+                    </li>
+                    <li>To add a custom component to the palette select <strong>Tools &gt;       
+                    Palette &gt; MIDP Visual Mobile Designer</strong>. This brings up the <strong>Palette Manager</strong> 
+                    (Figure-1-6).<br> 
+                    <img src="index_files/screenshots/ex1-paletteManager.PNG" width="462" height="469">
+                        <br>Figure-1-6: Palette Manager<br>
+                        <br>
+                    </li>
+                    <li>In the dialog, click on <strong>Add to Palette</strong> button. 
+                    A wizard for adding new component to the palette appears. </li>
+                    <li>On the first page, select the project from which you'd like to add the component. In our case, <strong>MobileGameApp</strong> project should              be selected.</li>
+                    <li>Click <strong>Next</strong> and select a class to add. By default this dialog shows only components which have sources in the select project, select the class <strong>org.netbeans.j1.game.MazeCanvas</strong> (Figure-1-7). </li>
+                    <li>In this dialog you can also specify the palette category to which the component is going to be added. For custom components, please              select the <strong>Custom Components</strong> node. <br>            
+                        <img src="index_files/screenshots/ex1-paletteManager-classes.PNG" width="625" height="460"><br>
+                        Figure-1-7: Registering custom component<br>
+                        <br>
+                    </li>
+                    <li>Close the palette manager. MazeCanvas component is now available              
+                    for the visual design (Figure-1-8).<br>
+                        <img src="index_files/screenshots/ex1-palette.PNG" width="353" height="468"><br>
+                    Figure-1-8: MazeCanvas component on the Palette</li>
+                </ol>
+                
+                
+                <p class="j1holsubheader">Step 4: Define the flow of the game application.</p>
+                <p>
+                In this step you are going to modify the UI of the application
+                    that will show a mobile game. When you add/fix the whole game UI and add the logic into the application, 
+                    the Visual Flow Design of the application should behave in following way. 
+                    When the user finish to play the game, the application will register his scores and it 
+                    will require him to enter the userID. It will keep his/her scores and add it into a scores table. 
+                    This table will display the top10 scores of the best players.
+                    If the user decides to improve the score he/she will have the option to update the previous score, 
+                    in case that it will happened the new score will be reflected in the score table,
+                    and return to the main menu, or  if he/she decides to exit the application the emulator will be close.
+                     For more details
+                    about the Visual Flow Design component (and other components) see Javadoc for NetBeans
+                    MIDP components and tutorials available on <a
+                        href="http://www.netbeans.org/kb/trails/mobility.html">http://www.netbeans.org/kb/trails/mobility.html</a>.<span style="margin-left: 40px;"><br>
+                        <br>
+                </span>          </p>
+                <ol>
+                    <li>Go to the <b>Flow Designer</b> of the GameMIDlet. Drag&amp;Drop the<strong> MazeCanvas </strong>component from palette to the Flow Designer. Component named<strong> MazeCanvas</strong> should appear in flow design. By this simple operation you just added a
+                        screen component to the design.                <span style="margin-left: 00px;">Create flow of the screens in the application. In the Flow design
+                        window, click on the<strong> menuItem</strong>_<strong>0</strong> and drag the arrow to the<strong> MazeCanvas</strong> component. New transition between screens is created.(Figure 10) 
+                        <img src="index_files/screenshots/ex1-gameVD2.png">
+                            Figure-1-10: Final design of the flow of the MazeCanvas applicatio</span>n<br>
+                    <br></li>
+                    <li><span style="margin-left: 00px;">Select </span><span style="margin-left: 00px;">MazeCanvas component in the Flow Design, go to properties window  and              
+                    click on a custom editor button of the <strong>midlet(1.contructor-1.parameter defined</strong> property (a small button with three dots). This opens a window with              
+                    embedded editor, which lets you to write a code to be executed</span>. In this editor, you need to change the default value &lt;null&gt; to <strong>this</strong> value (Figure-1-2)
+                    <br>
+                    <img src="index_files/screenshots/this.JPG" width="434" height="226"><br>
+                    Figure-1-11: Java expression<br><br></li>
+                    
+                    <li>The next task is to write the code, which will start the game thread. 
+                    To add this functionality you need to click the Source button at top of GameMIDlet document window. The source-code editor should open 
+                    Now find method <b>svgMainMenuAction</b> - you can either use CTRL+F or 
+                    double click the method name in Navigator at left bottom corner of the IDE.<br>
+                    If you have problem to find the right place where to write (or paste) the code
+                    you can use <b>Window > Tasklist</b> window. Where are listed all TODOs in this hands-on lab.
+                    <li>
+                        In the method change the code in following way              
+                        <div class="codebox">
+                            <pre>
+    public void svgMainMenuAction() {
+        // enter pre-action user code here
+        String __selectedElement = getSvgMainMenu().getMenuElementID(getSvgMainMenu().getSelectedIndex());
+        if (__selectedElement != null) {
+            if (__selectedElement.equals("menuItem_0")) {
+            
+                switchDisplayable(null, getMazeCanvas());
+                // write post-action user code here
+                //TODO: [Exercise1][step4] It starts the game thread
+                <b>myGameThread = new GameThread(getMazeCanvas(), this);//[Exercise1]
+            myGameThread.start();//[Exercise1]</b>    
+            } else if (__selectedElement.equals("menuItem_1")) {                                    
+             
+                            </pre>
+                        </div>
+                    </li>
+                </ol>
+                
+                
+                <p class="j1holcontents"><span class="j1holsubheader">Summary</span>:</p>
+                <p>In this exercise you learned how to rapidly create mobile application
+                    from scratch using visual designer. You utilized standard MIDP
+                    components as well as additional components supplied by NetBeans
+                    Mobility 6.0.1 external project,  which included a custom visual component. 
+                You learned how to add a Canvas into the custom components.</p>
+                <p class="j1holcontents"><a href="#Exercise_2">Go on to next exercise</a></p>
+            </blockquote>
+            
+        </div>
+    </body>
+</html>

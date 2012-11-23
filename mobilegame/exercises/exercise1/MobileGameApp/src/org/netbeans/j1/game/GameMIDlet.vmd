@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VisualDesign projectType="vmd-midp" version="1">
+    <Document version="2">
+        <Component componentID="0" typeID="C#Root">
+            <Property name="version" typeID="Pjava.lang.String" value="VMIDP-2.0"/>
+            <Component componentID="1" typeID="C#PointsCategory">
+                <Component componentID="2" typeID="C#MobileDevice">
+                    <Property name="start" typeID="C#MobileDeviceStartEventSource" value="R3"/>
+                    <Property name="resume" typeID="C#MobileDeviceResumeEventSource" value="R4"/>
+                    <Component componentID="3" typeID="C#MobileDeviceStartEventSource">
+                        <Property name="eventHandler" typeID="C#EventHandler" value="R91"/>
+                        <Component componentID="91" typeID="C#SwitchDisplayableEventHandler">
+                            <Property name="eventSource" typeID="C#EventSource" value="R3"/>
+                            <Property name="displayable" typeID="Cjavax.microedition.lcdui.Displayable" value="R24"/>
+                        </Component>
+                    </Component>
+                    <Component componentID="4" typeID="C#MobileDeviceResumeEventSource"/>
+                </Component>
+                <Component componentID="5" typeID="C#Display"/>
+            </Component>
+            <Component componentID="6" typeID="C#ControllersCategory">
+                <Component componentID="7" typeID="C#CommandListener"/>
+                <Component componentID="8" typeID="C#ItemCommandListener"/>
+                <Component componentID="9" typeID="C#ItemStateListener"/>
+            </Component>
+            <Component componentID="10" typeID="C#DisplayablesCategory">
+                <Component componentID="13" typeID="Corg.netbeans.microedition.svg.SVGMenu">
+                    <Property name="instanceName" typeID="Pjava.lang.String" value="VsvgMainMenu"/>
+                    <Property name="commands" typeID="1C#CommandEventSource" value="A1:3_R15"/>
+                    <Property name="title" typeID="Pjava.lang.String" value="VsvgMenu"/>
+                    <Property name="commandListener" typeID="C#CommandListener" value="R7"/>
+                    <Property name="isFullScreen" typeID="Pboolean" value="Vtrue"/>
+                    <Property name="svgImage" typeID="Cjavax.microedition.m2g.SVGImage" value="R18"/>
+                    <Property name="elements" typeID="1C#SVGMenuElementEventSource" value="A4:3_R193_R203_R213_R22"/>
+                    <Component componentID="15" typeID="C#SVGMenuSelectCommandEventSource">
+                        <Property name="eventHandler" typeID="C#EventHandler" value="R16"/>
+                        <Property name="displayable" typeID="Cjavax.microedition.lcdui.Displayable" value="R13"/>
+                        <Property name="command" typeID="Cjavax.microedition.lcdui.Command" value="R14"/>
+                        <Component componentID="16" typeID="C#SVGMenuEventHandler">
+                            <Property name="eventSource" typeID="C#EventSource" value="R15"/>
+                        </Component>
+                    </Component>
+                    <Component componentID="19" typeID="C#SVGMenuElementEventSource">
+                        <Property name="string" typeID="Pjava.lang.String" value="VmenuItem_0"/>
+                    </Component>
+                    <Component componentID="21" typeID="C#SVGMenuElementEventSource">
+                        <Property name="eventHandler" typeID="C#EventHandler" value="R70"/>
+                        <Property name="string" typeID="Pjava.lang.String" value="VmenuItem_2"/>
+                        <Component componentID="70" typeID="C#SwitchDisplayableEventHandler">
+                            <Property name="eventSource" typeID="C#EventSource" value="R21"/>
+                            <Property name="displayable" typeID="Cjavax.microedition.lcdui.Displayable" value="R67"/>
+                        </Component>
+                    </Component>
+                    <Component componentID="20" typeID="C#SVGMenuElementEventSource">
+                        <Property name="eventHandler" typeID="C#EventHandler" value="R48"/>
+                        <Property name="string" typeID="Pjava.lang.String" value="VmenuItem_1"/>
+                        <Component componentID="48" typeID="C#SwitchDisplayableEventHandler">
+                            <Property name="eventSource" typeID="C#EventSource" value="R20"/>
+                            <Property name="displayable" typeID="Cjavax.microedition.lcdui.Displayable" value="R29"/>
+                        </Component>
+                    </Component>
+                    <Component componentID="22" typeID="C#SVGMenuElementEventSource">
+                        <Property name="eventHandler" typeID="C#EventHandler" value="R71"/>
+                        <Property name="string" typeID="Pjava.lang.String" value="VmenuItem_3"/>
+                        <Component componentID="71" typeID="C#ExitMidletEventHandler">
+                            <Property name="eventSource" typeID="C#EventSource" value="R22"/>
+                            <Property name="mobileDevice" typeID="C#MobileDevice" value="R2"/>
+                        </Component>
+                    </Component>
+                </Component>
+                <Component componentID="24" typeID="Corg.netbeans.microedition.svg.SVGSplashScreen">
+                    <Property name="instanceName" typeID="Pjava.lang.String" value="VsvgGameSplashScreen"/>
+                    <Property name="commands" typeID="1C#CommandEventSource" value="A1:3_R26"/>
+                    <Property name="title" typeID="Pjava.lang.String" value="V"/>
+                    <Property name="commandListener" typeID="C#CommandListener" value="R7"/>
+                    <Property name="isFullScreen" typeID="Pboolean" value="Vtrue"/>
+                    <Property name="svgImage" typeID="Cjavax.microedition.m2g.SVGImage" value="R28"/>
+                    <Property name="timeout" typeID="Pint" value="V4000"/>
+                    <Component componentID="26" typeID="C#SVGSplashScreenDismissCommandEventSource">
+                        <Property name="eventHandler" typeID="C#EventHandler" value="R27"/>
+                        <Property name="displayable" typeID="Cjavax.microedition.lcdui.Displayable" value="R24"/>
+                        <Property name="command" typeID="Cjavax.microedition.lcdui.Command" value="R25"/>
+                        <Component componentID="27" typeID="C#SwitchDisplayableEventHandler">
+                            <Property name="eventSource" typeID="C#EventSource" value="R26"/>
+                            <Property name="displayable" typeID="Cjavax.microedition.lcdui.Displayable" value="R13"/>
+                        </Component>
+                    </Component>
+                </Component>
+                <Component componentID="29" typeID="Corg.netbeans.microedition.svg.SVGWaitScreen">
+                    <Property name="instanceName" typeID="Pjava.lang.String" value="VsvgGameScoresWaitScreen"/>
+                    <Property name="commands" typeID="1C#CommandEventSource" value="A2:3_R323_R33"/>
+                    <Property name="title" typeID="Pjava.lang.String" value="V"/>
+                    <Property name="commandListener" typeID="C#CommandListener" value="R7"/>
+                    <Property name="isFullScreen" typeID="Pboolean" value="Vtrue"/>
+                    <Property name="svgImage" typeID="Cjavax.microedition.m2g.SVGImage" value="R23"/>
+                    <Property name="task" typeID="Corg.netbeans.microedition.util.CancellableTask" value="R79"/>
+                    <Component componentID="32" typeID="C#SVGWaitScreenSuccessCommandEventSource">
+                        <Property name="eventHandler" typeID="C#EventHandler" value="R66"/>
+                        <Property name="displayable" typeID="Cjavax.microedition.lcdui.Displayable" value="R29"/>
+                        <Property name="command" typeID="Cjavax.microedition.lcdui.Command" value="R30"/>
+                        <Component componentID="66" typeID="C#SwitchDisplayableEventHandler">
+                            <Property name="eventSource" typeID="C#EventSource" value="R32"/>
+                            <Property name="displayable" typeID="Cjavax.microedition.lcdui.Displayable" value="R80"/>
+                        </Component>
+                    </Component>
+                    <Component componentID="33" typeID="C#SVGWaitScreenFailureCommandEventSource">
+                        <Property name="eventHandler" typeID="C#EventHandler" value="R64"/>
+                        <Property name="displayable" typeID="Cjavax.microedition.lcdui.Displayable" value="R29"/>
+                        <Property name="command" typeID="Cjavax.microedition.lcdui.Command" value="R31"/>
+                        <Component componentID="64" typeID="C#SwitchDisplayableEventHandler">
+                            <Property name="eventSource" typeID="C#EventSource" value="R33"/>
+                            <Property name="displayable" typeID="Cjavax.microedition.lcdui.Displayable" value="R13"/>
+                            <Property name="alert" typeID="Cjavax.microedition.lcdui.Alert" value="R62"/>
+                        </Component>
+                    </Component>
+                </Component>
+                <Component componentID="36" typeID="Cjavax.microedition.lcdui.Form">
+                    <Property name="instanceName" typeID="Pjava.lang.String" value="VformUserAndScore"/>
+                    <Property name="commands" typeID="1C#CommandEventSource" value="A2:3_R403_R42"/>
+                    <Property name="title" typeID="Pjava.lang.String" value="VAdd Your Name to High Scores"/>
+                    <Property name="commandListener" typeID="C#CommandListener" value="R7"/>
+                    <Property name="items" typeID="1Cjavax.microedition.lcdui.Item" value="A2:3_R513_R90"/>
+                    <Component componentID="42" typeID="C#CommandEventSource">
+                        <Property name="eventHandler" typeID="C#EventHandler" value="R73"/>
+                        <Property name="displayable" typeID="Cjavax.microedition.lcdui.Displayable" value="R36"/>
+                        <Property name="command" typeID="Cjavax.microedition.lcdui.Command" value="R41"/>
+                        <Component componentID="73" typeID="C#SwitchDisplayableEventHandler">
+                            <Property name="eventSource" typeID="C#EventSource" value="R42"/>
+                            <Property name="displayable" typeID="Cjavax.microedition.lcdui.Displayable" value="R29"/>
+                        </Component>
+                    </Component>
+                    <Component componentID="40" typeID="C#CommandEventSource">
+                        <Property name="eventHandler" typeID="C#EventHandler" value="R52"/>
+                        <Property name="displayable" typeID="Cjavax.microedition.lcdui.Displayable" value="R36"/>
+                        <Property name="command" typeID="Cjavax.microedition.lcdui.Command" value="R39"/>
+                        <Component componentID="52" typeID="C#SwitchDisplayableEventHandler">
+                            <Property name="eventSource" typeID="C#EventSource" value="R40"/>
+                            <Property name="displayable" typeID="Cjavax.microedition.lcdui.Displayable" value="R76"/>
+                        </Component>
+                    </Component>
+                    <Component componentID="51" typeID="Cjavax.microedition.lcdui.TextField">
+                        <Property name="instanceName" typeID="Pjava.lang.String" value="VnameTextField"/>
+                        <Property name="label" typeID="Pjava.lang.String" value="VUsername"/>
+                        <Property name="itemCommandListener" typeID="C#ItemCommandListener" value="R8"/>
+                        <Property name="maxSize" typeID="Pint" value="V10"/>
+                        <Property name="constraints" typeID="Pint" value="V0"/>
+                    </Component>
+                    <Component componentID="90" typeID="Cjavax.microedition.lcdui.TextField">
+                        <Property name="instanceName" typeID="Pjava.lang.String" value="VscoreTextField"/>
+                        <Property name="label" typeID="Pjava.lang.String" value="VYour Score is"/>
+                        <Property name="itemCommandListener" typeID="C#ItemCommandListener" value="R8"/>
+                        <Property name="maxSize" typeID="Pint" value="V32"/>
+                        <Property name="constraints" typeID="Pint" value="V131072"/>
+                    </Component>
+                </Component>
+                <Component componentID="62" typeID="Cjavax.microedition.lcdui.Alert">
+                    <Property name="instanceName" typeID="Pjava.lang.String" value="Valert"/>
+                    <Property name="title" typeID="Pjava.lang.String" value="Valert"/>
+                    <Property name="commandListener" typeID="C#CommandListener" value="R7"/>
+                    <Property name="string" typeID="Pjava.lang.String" value="VCannot connect to the server."/>
+                    <Property name="timeout" typeID="Pint" value="V-2"/>
+                </Component>
+                <Component componentID="67" typeID="Corg.netbeans.microedition.svg.SVGSplashScreen">
+                    <Property name="instanceName" typeID="Pjava.lang.String" value="VsvgSplashScreenAbout"/>
+                    <Property name="commands" typeID="1C#CommandEventSource" value="A1:3_R68"/>
+                    <Property name="title" typeID="Pjava.lang.String" value="V"/>
+                    <Property name="commandListener" typeID="C#CommandListener" value="R7"/>
+                    <Property name="svgImage" typeID="Cjavax.microedition.m2g.SVGImage" value="R69"/>
+                    <Property name="timeout" typeID="Pint" value="V7000"/>
+                    <Component componentID="68" typeID="C#SVGSplashScreenDismissCommandEventSource">
+                        <Property name="eventHandler" typeID="C#EventHandler" value="R72"/>
+                        <Property name="displayable" typeID="Cjavax.microedition.lcdui.Displayable" value="R67"/>
+                        <Property name="command" typeID="Cjavax.microedition.lcdui.Command" value="R25"/>
+                        <Component componentID="72" typeID="C#SwitchDisplayableEventHandler">
+                            <Property name="eventSource" typeID="C#EventSource" value="R68"/>
+                            <Property name="displayable" typeID="Cjavax.microedition.lcdui.Displayable" value="R13"/>
+                        </Component>
+                    </Component>
+                </Component>
+                <Component componentID="76" typeID="Corg.netbeans.microedition.svg.SVGWaitScreen">
+                    <Property name="instanceName" typeID="Pjava.lang.String" value="VsvgNewScoreWaitScreen"/>
+                    <Property name="commands" typeID="1C#CommandEventSource" value="A2:3_R773_R78"/>
+                    <Property name="title" typeID="Pjava.lang.String" value="V"/>
+                    <Property name="commandListener" typeID="C#CommandListener" value="R7"/>
+                    <Property name="isFullScreen" typeID="Pboolean" value="Vtrue"/>
+                    <Property name="svgImage" typeID="Cjavax.microedition.m2g.SVGImage" value="R23"/>
+                    <Property name="task" typeID="Corg.netbeans.microedition.util.CancellableTask" value="R34"/>
+                    <Component componentID="77" typeID="C#SVGWaitScreenSuccessCommandEventSource">
+                        <Property name="eventHandler" typeID="C#EventHandler" value="R92"/>
+                        <Property name="displayable" typeID="Cjavax.microedition.lcdui.Displayable" value="R76"/>
+                        <Property name="command" typeID="Cjavax.microedition.lcdui.Command" value="R30"/>
+                        <Component componentID="92" typeID="C#SwitchDisplayableEventHandler">
+                            <Property name="eventSource" typeID="C#EventSource" value="R77"/>
+                            <Property name="displayable" typeID="Cjavax.microedition.lcdui.Displayable" value="R80"/>
+                        </Component>
+                    </Component>
+                    <Component componentID="78" typeID="C#SVGWaitScreenFailureCommandEventSource">
+                        <Property name="eventHandler" typeID="C#EventHandler" value="R85"/>
+                        <Property name="displayable" typeID="Cjavax.microedition.lcdui.Displayable" value="R76"/>
+                        <Property name="command" typeID="Cjavax.microedition.lcdui.Command" value="R31"/>
+                        <Component componentID="85" typeID="C#SwitchDisplayableEventHandler">
+                            <Property name="eventSource" typeID="C#EventSource" value="R78"/>
+                            <Property name="displayable" typeID="Cjavax.microedition.lcdui.Displayable" value="R13"/>
+                            <Property name="alert" typeID="Cjavax.microedition.lcdui.Alert" value="R62"/>
+                        </Component>
+                    </Component>
+                </Component>
+                <Component componentID="80" typeID="Corg.netbeans.microedition.svg.SVGSplashScreen">
+                    <Property name="instanceName" typeID="Pjava.lang.String" value="VsvgScoresTable"/>
+                    <Property name="commands" typeID="1C#CommandEventSource" value="A1:3_R81"/>
+                    <Property name="title" typeID="Pjava.lang.String" value="V"/>
+                    <Property name="commandListener" typeID="C#CommandListener" value="R7"/>
+                    <Property name="isFullScreen" typeID="Pboolean" value="Vtrue"/>
+                    <Property name="svgImage" typeID="Cjavax.microedition.m2g.SVGImage" value="R88"/>
+                    <Property name="timeout" typeID="Pint" value="V-1"/>
+                    <Component componentID="81" typeID="C#SVGSplashScreenDismissCommandEventSource">
+                        <Property name="eventHandler" typeID="C#EventHandler" value="R89"/>
+                        <Property name="displayable" typeID="Cjavax.microedition.lcdui.Displayable" value="R80"/>
+                        <Property name="command" typeID="Cjavax.microedition.lcdui.Command" value="R25"/>
+                        <Component componentID="89" typeID="C#SwitchDisplayableEventHandler">
+                            <Property name="eventSource" typeID="C#EventSource" value="R81"/>
+                            <Property name="displayable" typeID="Cjavax.microedition.lcdui.Displayable" value="R13"/>
+                        </Component>
+                    </Component>
+                </Component>
+            </Component>
+            <Component componentID="11" typeID="C#CommandsCategory">
+                <Component componentID="14" typeID="C#SVGMenuSelectCommand">
+                    <Property name="instanceName" typeID="Pjava.lang.String" value="VasvgMenuSelectCommand"/>
+                    <Property name="label" typeID="Pjava.lang.String" value="VSelect"/>
+                    <Property name="type" typeID="Pint" value="V8"/>
+                    <Property name="priority" typeID="Pint" value="V0"/>
+                    <Property name="ordinary" typeID="Pboolean" value="Vfalse"/>
+                </Component>
+                <Component componentID="25" typeID="C#SVGSplashScreenDismissCommand">
+                    <Property name="label" typeID="Pjava.lang.String" value="VDismiss"/>
+                    <Property name="type" typeID="Pint" value="V4"/>
+                    <Property name="priority" typeID="Pint" value="V0"/>
+                    <Property name="ordinary" typeID="Pboolean" value="Vfalse"/>
+                </Component>
+                <Component componentID="31" typeID="C#SVGWaitScreenFailureCommand">
+                    <Property name="label" typeID="Pjava.lang.String" value="VFailure"/>
+                    <Property name="type" typeID="Pint" value="V4"/>
+                    <Property name="priority" typeID="Pint" value="V0"/>
+                    <Property name="ordinary" typeID="Pboolean" value="Vfalse"/>
+                </Component>
+                <Component componentID="30" typeID="C#SVGWaitScreenSuccessCommand">
+                    <Property name="label" typeID="Pjava.lang.String" value="VSuccess"/>
+                    <Property name="type" typeID="Pint" value="V4"/>
+                    <Property name="priority" typeID="Pint" value="V0"/>
+                    <Property name="ordinary" typeID="Pboolean" value="Vfalse"/>
+                </Component>
+                <Component componentID="39" typeID="Cjavax.microedition.lcdui.Command">
+                    <Property name="instanceName" typeID="Pjava.lang.String" value="VokCommand1"/>
+                    <Property name="label" typeID="Pjava.lang.String" value="VOk"/>
+                    <Property name="type" typeID="Pint" value="V4"/>
+                </Component>
+                <Component componentID="41" typeID="Cjavax.microedition.lcdui.Command">
+                    <Property name="instanceName" typeID="Pjava.lang.String" value="VcancelCommand"/>
+                    <Property name="label" typeID="Pjava.lang.String" value="VCancel"/>
+                    <Property name="type" typeID="Pint" value="V3"/>
+                </Component>
+                <Component componentID="57" typeID="C#WaitScreenFailureCommand">
+                    <Property name="label" typeID="Pjava.lang.String" value="VFailure"/>
+                    <Property name="type" typeID="Pint" value="V4"/>
+                    <Property name="priority" typeID="Pint" value="V0"/>
+                    <Property name="ordinary" typeID="Pboolean" value="Vfalse"/>
+                </Component>
+                <Component componentID="56" typeID="C#WaitScreenSuccessCommand">
+                    <Property name="label" typeID="Pjava.lang.String" value="VSuccess"/>
+                    <Property name="type" typeID="Pint" value="V4"/>
+                    <Property name="priority" typeID="Pint" value="V0"/>
+                    <Property name="ordinary" typeID="Pboolean" value="Vfalse"/>
+                </Component>
+                <Component componentID="82" typeID="Cjavax.microedition.lcdui.Command">
+                    <Property name="instanceName" typeID="Pjava.lang.String" value="VokCommand2"/>
+                    <Property name="label" typeID="Pjava.lang.String" value="VOk"/>
+                    <Property name="type" typeID="Pint" value="V4"/>
+                </Component>
+            </Component>
+            <Component componentID="12" typeID="C#ResourcesCategory">
+                <Component componentID="18" typeID="Cjavax.microedition.m2g.SVGImage">
+                    <Property name="instanceName" typeID="Pjava.lang.String" value="VsvgMenuImage"/>
+                    <Property name="resourcePath" typeID="Pjava.lang.String" value="V/menu.svg"/>
+                </Component>
+                <Component componentID="23" typeID="Cjavax.microedition.m2g.SVGImage">
+                    <Property name="instanceName" typeID="Pjava.lang.String" value="VsvgWaitImage"/>
+                    <Property name="resourcePath" typeID="Pjava.lang.String" value="V/waitscreen.svg"/>
+                </Component>
+                <Component componentID="28" typeID="Cjavax.microedition.m2g.SVGImage">
+                    <Property name="instanceName" typeID="Pjava.lang.String" value="VsvgSplashImage"/>
+                    <Property name="resourcePath" typeID="Pjava.lang.String" value="V/splashscreen.svg"/>
+                </Component>
+                <Component componentID="34" typeID="Corg.netbeans.microedition.util.SimpleCancellableTask">
+                    <Property name="instanceName" typeID="Pjava.lang.String" value="VaddHighScoreTask"/>
+                </Component>
+                <Component componentID="69" typeID="Cjavax.microedition.m2g.SVGImage">
+                    <Property name="instanceName" typeID="Pjava.lang.String" value="VsvgAboutImage"/>
+                    <Property name="resourcePath" typeID="Pjava.lang.String" value="V/about.svg"/>
+                </Component>
+                <Component componentID="79" typeID="Corg.netbeans.microedition.util.SimpleCancellableTask">
+                    <Property name="instanceName" typeID="Pjava.lang.String" value="VhighScoresTask"/>
+                </Component>
+                <Component componentID="88" typeID="Cjavax.microedition.m2g.SVGImage">
+                    <Property name="instanceName" typeID="Pjava.lang.String" value="VsvgScoresImage"/>
+                    <Property name="resourcePath" typeID="Pjava.lang.String" value="V/scoreTable.svg"/>
+                </Component>
+            </Component>
+        </Component>
+    </Document>
+    <FlowScene version="1">
+        <Node componentID="24" descriptorID="componentNode24" x="339" y="25"/>
+        <Node componentID="76" descriptorID="componentNode76" x="640" y="151"/>
+        <Node componentID="36" descriptorID="componentNode36" x="418" y="449"/>
+        <Node componentID="13" descriptorID="componentNode13" x="243" y="145"/>
+        <Node componentID="67" descriptorID="componentNode67" x="0" y="311"/>
+        <Node componentID="29" descriptorID="componentNode29" x="52" y="420"/>
+        <Node componentID="2" descriptorID="componentNode2" x="34" y="32"/>
+        <Node componentID="80" descriptorID="componentNode80" x="681" y="449"/>
+        <Node componentID="62" descriptorID="componentNode62" x="688" y="21"/>
+    </FlowScene>
+</VisualDesign>

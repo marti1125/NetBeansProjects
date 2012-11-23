@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24/11/2010 08:39:35 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="jstore.Movimiento" table="Movimiento" catalog="jstore">
+        <id name="codigoMovimiento" type="java.lang.Integer">
+            <column name="codigoMovimiento" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="productoDetalle" class="jstore.ProductoDetalle" fetch="select">
+            <column name="codProductoDell" />
+        </many-to-one>
+        <property name="tipo" type="string">
+            <column name="tipo" length="20" />
+        </property>
+        <property name="destino" type="string">
+            <column name="destino" length="20" />
+        </property>
+        <property name="fecActual" type="date">
+            <column name="fecActual" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

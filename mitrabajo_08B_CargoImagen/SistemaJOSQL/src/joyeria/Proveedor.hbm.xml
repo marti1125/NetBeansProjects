@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 10-may-2010 15:42:27 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="joyeria.Proveedor" table="Proveedor" schema="dbo" catalog="Joyeria">
+        <id name="idProveedor" type="string">
+            <column name="IdProveedor" length="50" />
+            <generator class="identity" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="Nombre" length="50" not-null="true" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="Direccion" length="50" not-null="true" />
+        </property>
+        <property name="codPostal" type="string">
+            <column name="CodPostal" length="50" not-null="true" />
+        </property>
+        <property name="provincia" type="string">
+            <column name="Provincia" length="50" not-null="true" />
+        </property>
+        <property name="departamento" type="string">
+            <column name="Departamento" length="50" not-null="true" />
+        </property>
+        <property name="pais" type="string">
+            <column name="Pais" length="50" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="Email" length="50" not-null="true" />
+        </property>
+        <set name="ingresos" inverse="true">
+            <key>
+                <column name="IdProveedor" length="50" not-null="true" />
+            </key>
+            <one-to-many class="joyeria.Ingreso" />
+        </set>
+    </class>
+</hibernate-mapping>

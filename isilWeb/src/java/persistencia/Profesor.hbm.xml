@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/04/2010 08:17:45 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="persistencia.Profesor" table="profesor" catalog="gestion">
+        <id name="codProf" type="string">
+            <column name="COD_PROF" length="10" />
+            <generator class="assigned" />
+        </id>
+        <property name="patProf" type="string">
+            <column name="PAT_PROF" length="40" />
+        </property>
+        <property name="matProf" type="string">
+            <column name="MAT_PROF" length="40" />
+        </property>
+        <property name="nomProf" type="string">
+            <column name="NOM_PROF" length="40" />
+        </property>
+        <property name="fnacProf" type="timestamp">
+            <column name="FNAC_PROF" length="19" />
+        </property>
+        <property name="dniProf" type="string">
+            <column name="DNI_PROF" length="8" />
+        </property>
+        <property name="anuIngr" type="java.lang.Integer">
+            <column name="ANU_INGR" />
+        </property>
+        <property name="especialidad" type="string">
+            <column name="ESPECIALIDAD" length="60" />
+        </property>
+    </class>
+</hibernate-mapping>

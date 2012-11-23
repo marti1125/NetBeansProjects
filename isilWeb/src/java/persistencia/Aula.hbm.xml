@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/04/2010 08:17:45 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="persistencia.Aula" table="aula" catalog="gestion">
+        <id name="codAula" type="string">
+            <column name="COD_AULA" length="10" />
+            <generator class="assigned" />
+        </id>
+        <property name="capMax" type="java.lang.Integer">
+            <column name="CAP_MAX" />
+        </property>
+        <property name="tipoAula" type="string">
+            <column name="TIPO_AULA" length="7" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,163 @@
+<html>
+    <head>
+        <meta name="j1holtabname" content="Introduction">
+    </head>
+    <body>
+        <div class="j1holcontents">
+            <!-- This text contents of the tag labeled "j1holtitleid" on the
+                 page in the first tab will be used to set the title for the
+                 page.  If such a tag cannot be found, the page title will be
+                 the generic title from the index page. -->
+            <div id="j1holtitleid" class="pagetitle"><a name="Intro"></a> LAB-6400: Create Your Own Mobile Game</div>
+            
+            <div class="j1holduration xbig">Expected duration: 120 minutes</div>
+            
+            <div class="j1holcontacts">Contacts:
+                <a href="mailto:lukas.hasik@sun.com">Lukas Hasik</a>
+            and <a href="mailto:fabiola.rios@sun.com">Fabiola Rios</a></div>
+            
+            <div class="j1holupdated">Last Updated: April 17, 2008</div>
+            
+            <p>NetBeans Mobility 6.0.1 introduced various tools for Mobile   applications including new Visual  Designer as well as Game Builder. Both allows you to visually develop   Java ME applications and games for various MIDP-2.0-compliant mobile   devices. </p>
+            <p>In this lab, participants will use the Game Builder to create a mobile   game. They will create the menu for managing the application and also the game itself. NetBeans   Mobile Pack helps you with connecting your game to an enterprise   solution through J2ME Web Services API (JSR 172) for exchanging various   data. <br>
+            In this hands-on lab session, developers will gain an experience with   the successful tools, technologies and the best practices to seamlessly build mobile game   application using the Java ME and Java EE technologies. The result of the hands on lab will be a   real world mobile game which you can take with you in your mobile phone. </p>
+            <div class="j1holcopyright">
+                <p>Copyright</p>
+                
+                <pre>Copyright 2008 Sun Microsystems, Inc. All rights reserved. Sun, Sun Microsystems, the Sun logo, Solaris, Java, the Java Coffee Cup logo, JavaOne, the JavaOne logo, and all Solaris-based and Java-based marks and logos are trademarks or registered trademarks of Sun Microsystems, Inc. in the United States and other countries.</pre>
+            </div>
+            
+            <p class="j1holheader">Prerequisites</p>
+            
+            <p>This hands-on lab assumes you have some
+            basic knowledge or programming experience on the following technologies.</p>
+            
+            <ul>
+                <li>MIDP/CLDC development</li>
+                <li>Mobile Media API (JSR 135)</li>
+                <li>Web Services API (JSR 172)</li>
+            </ul>
+            
+            <p class="j1holheader">System Requirements</p>
+            
+            <ul>
+                <li>Supported OS: Windows Vista/ XP, Solaris 10 x86/x64,Linux,Ubuntu7.x.</li>
+                <li>Memory requirement: 512MB minimum, 1GB recommended</li>
+                <li>Disk space requirement: 650MB minimum, 1GB recommended</li>
+                <li>Processor requirement: minimum 800 MHz Intel Pentium III
+                workstation, recommended 1.4 GHz Intel Pentium III or equivalent</li>
+                <li>JVM requirement: JDK 1.5_0 or higher</li>
+            </ul>
+            
+            <p class="j1holheader">Software needed for the lab</p>
+            
+            <p>Please download and install the following set of software. If you have any
+                questions on installation, please feel free to send questions to the
+            email alias mentioned below.</p>
+            
+            <ul class="j1hollist">
+                <li>Download and install <a href="http://download.netbeans.org/netbeans/6.0/final/">
+                    NetBeans IDE 6.0.1 ALL version</a>, it includes all the Netbeans packs and bundles application server.
+                    <ul>
+                        <li>Select <span style="font-style: italic;">your platform and
+                        language</span> at the download page</li>
+                    </ul>
+                </li>
+                
+                
+                <li>Download and unzip lab file (under a directory of your choice)
+                    <ul>
+                        <li>Read &lt;lab_root&gt;/index.html to proceed</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <p class="j1holheader"">Notations used in this documentation</p>
+            
+            <ul class="j1hollist">
+                <li>&lt;NETBEANS_HOME&gt;
+                    <ul>
+                        <li>It is the installation directory of NetBeans IDE with Mobility
+                        Pack</li>
+                        <ul>
+                            <li>For Windows, the default is C:\Program Files\netbeans-6.0.1</li>
+                            <li>For Linux, the default is ~/netbeans-6.0.1</li>
+                        </ul>
+                    </ul>
+                </li>
+                
+                <li>&lt;APPSERVER_HOME&gt; - directory where you installed Sun Java
+                System Application Server (or glassfish)</li>
+                <li>&lt;lab_root&gt; - directory into which lab zip file is unzipped
+                    <ul>
+                        <li>This document uses &lt;lab_root&gt; to denote the directory under
+                            which you have unzipped the lab zip file of this handson lab. The name
+                            of the lab zip file of this handson lab is <span
+                            style="font-weight: bold;">6400_mobilegame.zip</span>.</li>
+                        <li>Once you unzipped the lab zip file under &lt;lab_root&gt;, it
+                            will create a subdirectory called<span style="font-weight: bold;">mobilegame</span>.
+                            For example, under Windows, if you have unzipped the lab zip file in
+                            the root of drive <span style="font-weight: bold;">E:\</span>, it will
+                            create <span style="font-weight: bold;">E:\</span><span style="font-weight: bold;">mobilegame</span><span
+                                style="font-weight: bold;"></span>.&nbsp; Under Linux if you have
+                        unzipped the lab zip file in the <span style="font-weight: bold;">/home/sang</span> directory, it will create <span style="font-weight: bold;">/home/sang/</span><span style="font-weight: bold;">mobilegame</span> directory</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <p class="j1holheader"">Lab exercises</p>
+            
+            <ul>
+                <li><a href="#Exercise_0">Exercise 0: Install and configure the lab
+                environment</a></li>
+                <li><a href="#Exercise_1">Exercise 1: Creating a MIDP application using visual tools</a></li>
+                <li><a href="#Exercise_2">Exercise 2: Create the game</a></li>
+                <li><a href="#Exercise_3">Exercise 3: Logic of the game</a></li>
+                <li><a href="#Exercise_4">Exercise 4: Make it connected</a></li>
+            </ul>
+            
+            <p class="j1holheader">Resources</p>
+            
+            <ul>
+                <li>
+                    <a href="6400_mobilegame.pdf">Lab presentation</a>
+                </li>
+                <li>
+                    <a href="http://www.netbeans.org/kb/trails/mobility.html">Mobile Applications Learning Trail</a>
+                </li>
+                
+            </ul>
+            
+            <p class="j1holheader">Where to send questions or feedbacks
+            on this lab and public discussion forums</p>
+            
+            <ul class="j1hollist">
+                <li>
+                    You can send technical questions via email to the authors of this
+                    Hands-on lab (and experts on the subject) or you can post the questions
+                    to the web. <br>
+                </li>
+                
+                <li>
+                    You can send your other questions to the public mailing lists and
+                    forums.
+                    
+                    <ul>
+                        <li>
+                            <a href="http://mobility.netbeans.org/servlets/SummarizeList?listName=users">Mobility
+                            users mailing list archive </a>
+                        </li>
+                        <li>
+                            <a href="http://forum.java.sun.com/forum.jspa?forumID=76">Forum:
+                            Java ME Technologies - CLDC and MIDP</a>
+                        </li>
+                        <li>
+                            <a href="https://hands-on-labs.dev.java.net/servlets/ForumMessageList?forumID=3101">JavaOne2008
+                            forum at hands-on-labs.dev.java.net</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

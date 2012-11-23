@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/04/2010 08:17:45 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="persistencia.Matricula" table="matricula" catalog="gestion">
+        <composite-id name="id" class="persistencia.MatriculaId">
+            <key-property name="semestre" type="string">
+                <column name="semestre" length="10" />
+            </key-property>
+            <key-property name="curso" type="string">
+                <column name="curso" length="10" />
+            </key-property>
+            <key-property name="grupo" type="int">
+                <column name="grupo" />
+            </key-property>
+            <key-property name="alumno" type="string">
+                <column name="alumno" length="10" />
+            </key-property>
+        </composite-id>
+        <property name="fecMat" type="timestamp">
+            <column name="fec_mat" length="19" not-null="true" />
+        </property>
+        <property name="exaParc" type="big_decimal">
+            <column name="exa_parc" precision="4" not-null="true" />
+        </property>
+        <property name="exaFin" type="big_decimal">
+            <column name="exa_fin" precision="4" not-null="true" />
+        </property>
+        <property name="promPract" type="big_decimal">
+            <column name="prom_pract" precision="4" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

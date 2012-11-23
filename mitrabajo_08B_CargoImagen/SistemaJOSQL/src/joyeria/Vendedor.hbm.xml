@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 10-may-2010 15:42:27 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="joyeria.Vendedor" table="Vendedor" schema="dbo" catalog="Joyeria">
+        <id name="idVendedor" type="int">
+            <column name="IdVendedor" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="tipoDocumentos" class="joyeria.TipoDocumentos" fetch="select">
+            <column name="IdTipoDoc" not-null="true" />
+        </many-to-one>
+        <property name="nroDocumento" type="string">
+            <column name="NroDocumento" length="50" not-null="true" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="Nombre" length="50" not-null="true" />
+        </property>
+        <property name="telefono1" type="string">
+            <column name="Telefono1" length="50" not-null="true" />
+        </property>
+        <property name="telefono2" type="string">
+            <column name="Telefono2" length="50" not-null="true" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="Direccion" length="50" not-null="true" />
+        </property>
+        <property name="codPostal" type="string">
+            <column name="CodPostal" length="50" not-null="true" />
+        </property>
+        <property name="provincia" type="string">
+            <column name="Provincia" length="50" not-null="true" />
+        </property>
+        <property name="departamento" type="string">
+            <column name="Departamento" length="50" not-null="true" />
+        </property>
+        <property name="pais" type="string">
+            <column name="Pais" length="50" not-null="true" />
+        </property>
+        <property name="fechaIngreso" type="timestamp">
+            <column name="FechaIngreso" length="23" not-null="true" />
+        </property>
+        <property name="fechaCese" type="timestamp">
+            <column name="FechaCese" length="23" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="Email" length="50" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

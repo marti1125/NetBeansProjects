@@ -1,0 +1,192 @@
+<html>
+    <head>
+        <meta name="j1holtabname" content="Exercise 2: Create the game">        
+    </head>
+    <body>
+        <div class="j1holcontents">
+            
+            <h1><a name="Exercise_2"></a>Exercise 2: Create the game</h1>
+            
+            <div class="j1holduration xbig">Expected duration: 25 minutes</div>
+            
+            <p class="j1holheader">Introduction:</p>
+            
+            <p>
+            In this exercise, we'll look to the most important   blocks  to build up the Game UISprites, TiledLayers and Scenes. NetBeans Mobility provides set of   tool for creation of this UI blocks for the game developers.  </p>
+            
+            <ul>
+                <li>How to create a new Visual Game Design file that encapsulates   the graphics of the game  </li>
+                <li>Create new Scene  </li>
+                <li>Create new TiledLayer </li>
+                <li>Create new Sprite</li>
+                <li>How to design look of individual objects <br>
+                </li>
+            </ul>
+            <p class="j1holheader">Background information:</p>
+            <p align="justify">Visual editing support for<strong> MIDP 2.0 Game API</strong> including creation and  editing of Sprites, TiledLayers and their arrangement into scenes. The  main goal of the <strong>Game Builder </strong>module is to reduce the effort involved  in creating common game components.
+            <ul>
+                <li class="j1holcontents"><span style="font-weight: bold;">Sprite</span> &#8211; Game Builder treats sprites as a collection of animated sequences where  each sprite can be contain a number of sequences. The sprite editor  allows editing and previewing of multiple animated sequences  simultaneously.</li>
+                <li class="j1holcontents"><span style="font-weight: bold;">TiledLayer</span> &#8211;<strong> </strong>Grid of cells, each painted with one frame selected from an Image. When a new tiled layer is created it can be edited using the available  visual editor. This allows the user to modify the contents of the tiled  layer and receive instant visual feedback. The tiled layer editor also  includes support for animated tiles.</li>
+                <li class="j1holcontents"><span style="font-weight: bold;">Scene</span> - 
+                    Scenes are locations within a game enviroment that have distintive visual, and possible audio, 
+                    characteristics that define the games look and feel. Each level in a game can have several different scenes.
+                Conversely,a simple game may have only one scene for all of its levels.</li>
+            </ul>
+            <p class="j1holsubheader">Steps to Follow:</p>
+            <ul>
+                <li>Create a new Visual Game Design file</li>
+                <li>Create new Sprites</li>
+                <li>Create new TiledLayer</li>
+                <li>Create new scene for our game</li>
+                <li>Modify the background</li>
+            </ul>
+            <p class="j1holsubheader">Step 1: Create a new Visual Game Design file</p>
+            <p> In this step you will create a new Visual Game Design file, which will be developed in              
+            the Game Builder.</p>
+            <ol><li> Right click on the package <strong>org.netbeans.j1.game</strong> and             
+                    select <strong>New &gt; Visual Game Design</strong>. A <strong>New File</strong> wizard for          
+                the visual game appears. </li>
+                <li> In this wizard enter the name of the GameDesign (this name will be              
+                    visible to user when launching the application) - for example <strong>MazeGameDesign</strong>.   
+                    Click <strong>Finish</strong> to create
+                    the visual game. When created, the file should be opened in Game Builder               
+                    (Figure-2-1).<br>
+                    <br>
+                    <img src="index_files/screenshots/ex2_emptyGameDesign.png">
+                    <p>Figure-2-1: MazeGameDesign in the Game Builder<br>
+                    </p>
+                </li>
+            </ol>
+            <p class="j1holsubheader">Step 2: Create new Sprites</p>
+            <p>
+            Sprites are the build brick of any MIDP game. Game Builder treats sprites as a collection of animated sequences where  each sprite can be contain a number of sequences.</p>
+            
+            <ol class="j1hollist">
+                <li>
+                    We will create new sprite. You can create it in following ways:
+                    <ul>
+                        <li>Click <b>Create Sprite</b> text in the GameDesign file opened in editor. The <i>Game Builder</i> view has to be active.</li>
+                        <li>Click Create Sprite icon <img src="index_files/screenshots/ex2-create-sprite-icon.png" /> in toolbar of the GameDesign file opened in editor.</li>
+                    </ul>
+                    <br>
+                    Use the <i>/duke.png</i> image. Adjust the<b> tile size to 25 pixels</b> with the sliders for both - width and height.
+                    Name the Sprite as <b><i>dukeS</i></b>. Click <b>Finish</b> button.                             <br>
+                    <img src="index_files/screenshots/ex2-create-duke-sprite.png" /><br>
+                    Figure-2-2: Create new sprite<br>
+                    <br>
+                    New sprite with default sequence opens in the editor.
+                    <br>
+                    <img src="index_files/screenshots/ex2-duke-sprite-default.png" /><br>
+                    Figure-2-3: Default duke sprite sequence
+                    
+                </li>
+                <li>
+                    Change the look of the sprite sequence to look like at Figure-2-4. 
+                    You can drag and drop images to desired position in the sprite sequence 
+                    from the down part of the Game Builder view where you can see all the available tiles for the sprite. When you right click a frame in the sequence you can remove the frame.
+                    <br><br>
+                    <img src="index_files/screenshots/ex2-duke-sequence.png" /><br>
+                    Figure-2-4: Duke sprite sequence
+                </li>
+                <li>
+                    We need to create one more Sprite in our game in the same way as the previous one. 
+                    This time we will name the sprite <b>jamesS</b>. The image that we will use is <i>bigG</i>.
+                    <br><br>
+                    When the <b>jamesS</b> sprite is created it should look like on Figure-2-5.<br><br>
+                    <img src="index_files/screenshots/ex2-james-sprite.png" /><br>
+                    Figure-2-5: James Gosling sprite<br><br>
+                </li>
+                
+                <li>
+                    We need more sequences for our duke sprite. The duke can walk, he can fall and also jump.
+                    We have to create new sequences. Open the dukeS sprite in the Game Builder. Right click on any
+                    frame of the default sequence - dukeSseq001.
+                </li>
+                <li>Choose <b>Create sequence</b> from the popup menu.
+                    Name the sequence <i><b>dukeSfalling</b></i>. Create one more sequence with name
+                    <i><b>dukeSjumping</b></i>. <br>
+                    <img src="index_files/screenshots/ex2-sequences.png" /><br>
+                    Figure-2-6: Sequences<br><br>
+                </li>
+                
+                
+            </ol>
+            
+            <p class="j1holsubheader">Step 3: Create new TiledLayer</p>
+            <p>
+            TiledLayer are the build brick of any MIDP game. When a new tiled layer is created it can be edited in the  
+            visual editor. This allows the user to modify the contents of the tiled layer and receive instant visual feedback. 
+            The tiled layer editor also  includes support for animated tiles.</p>
+            
+            <ol class="j1hollist">
+                <li>
+                    Create new TiledLayer. You can invoke the New TiledLayer dialog in different way.
+                    
+                    Name the TiledLayer as <b>maze1</b>. Use image wall. Adjust the tile size to the maximum heigth and width.<br><br>
+                    <img src="index_files/screenshots/ex2-new-tiledlayer.png" /><br>
+                    Figure-2-7: New tiled layer
+                </li>
+                <li>
+                    Press Finish button. Empty grid appears.  <br>
+                    <img src="index_files/screenshots/ex2-empty-tiledlayer.png" /><br>
+                    Figure-2-8: Empty tiled layer
+                </li>
+                <li>
+                    You can create the tiled layer by drag and drop of images 
+                    from bottom area to the grid. The IDE will construct the tiled layer table for you.
+                    Create a maze of square shape. Build up the walls of the maze. The maze should be square shape. 
+                    
+                    <br>
+                    <img src="index_files/screenshots/ex2-maze1.png" /><br>
+                    Figure-2-9: Example of maze walls
+                </li>
+                
+                
+            </ol>
+            
+            <p class="j1holsubheader">Step 4: Create new Scene</p>
+            <p>The scene editor is provided to organize all layers (sprites and tiled layers) together into scenes.</p>
+            
+            
+            <ol class="j1hollist">
+                <li>
+                Create new Scene. 
+                Name the Scene as <b>level1</b>. Click Finish button.
+                Empty scene grid appears.
+                <li>
+                    Right click the grid. Choose <b>Add tiled layer > maze1</b> from the popup menu.
+                    The <i>maze1</i> appears on the grid.<br><br>
+                    <img src="index_files/screenshots/ex2-scene-add-tiledlayer.png" /><br>
+                    Figure-2-10: Maze1 on the scene grid
+                </li>
+                <li>
+                    The <i>maze1</i> tiled layer appears on grid in positions where you right clicked the mouse.
+                    We need it in 0,0 position. You can either move it the with mouse 
+                    or you can set position in <b>Navigator</b> view in right bottom corner of IDE.<br><br>
+                    <img src="index_files/screenshots/ex2-scene-setup-correct-position.png" /><br>
+                    Figure-2-11: Setup of position    
+                </li>
+                <li>
+                    Right click the grid again. Choose <b>Add sprite > jamesS</b> from the popup menu.
+                    Add <b>dukeS</b> sprite into the scene too.
+                    Place both the sprites to not collide with the maze walls.<br>
+                    <img src="index_files/screenshots/ex2-scene-final.png" /><br>
+                    Figure-2-12: Final look of the scene<br><br>
+                    When placing the sprites of duke and James into the maze remember the purpose of the game - 
+                    duke is looking for James.
+                </li>
+                
+            </ol>
+            
+            <p class="j1holcontents"><span class="j1holsubheader">Summary</span>:</p>
+            <p>In this exercise you learned how to create new sprite, tiled layer. 
+                Please, note that you can design these sprites and tiled layers in visual tool. 
+                The sprites and tiled layer are defined by arrays of positions of a tile in the png image of the sprite.
+                NetBeans Mobility generates these boring arrays for you. If you want to see the generated source code
+                switch to <b>Source</b> of the MazeGameDesign.<br><br>
+                You also learned how to create sequences of sprite and how to compose the sprites and tiled layers into a scene with NetBeans Mobility.                
+            </p>            
+            <p><a href="#Exercise_3">Go on to next exercise</a></p>
+        </div>
+    </body>
+</html>
